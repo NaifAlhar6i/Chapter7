@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Kernels/MDIKernels.cl</file>
+        <file>Shaders/sphere.frag</file>
+        <file>Shaders/sphere.geom</file>
+        <file>Shaders/sphere.vert</file>
+    </qresource>
+</RCC>

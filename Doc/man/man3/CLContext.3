@@ -1,0 +1,117 @@
+.TH "CLContext" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLContext \- The \fBCLContext\fP class interfaces th OpenCL cl_context object \fBCLContext\fP requires a valid pointers to \fBCLDevice\fP and \fBCLPlatform\fP class\&. The class provides four main function: Setup, GetContext, GetSharedContext and GetDeviceID\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clcontext\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLContext\fP (\fBCLDevice\fP *cldevice, \fBCLPlatform\fP *clplatform)"
+.br
+.RI "\fI\fBCLContext\fP class constructor\&. \fP"
+.ti -1c
+.RI "bool \fBSetup\fP ()"
+.br
+.RI "\fISetup creates two OpenCL contexts: 1) a default context (non-shareable), and 2) shared context\&. \fP"
+.ti -1c
+.RI "cl_context \fBGetContext\fP ()"
+.br
+.RI "\fIGetContext accessor for default context\&. \fP"
+.ti -1c
+.RI "cl_context \fBGetSharedContext\fP ()"
+.br
+.RI "\fIGetSharedContext accesor for shared context\&. \fP"
+.ti -1c
+.RI "cl_device_id \fBGetDeviceID\fP ()"
+.br
+.RI "\fIGetDeviceID accessor for device id\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLContext\fP class interfaces th OpenCL cl_context object \fBCLContext\fP requires a valid pointers to \fBCLDevice\fP and \fBCLPlatform\fP class\&. The class provides four main function: Setup, GetContext, GetSharedContext and GetDeviceID\&. 
+.PP
+Definition at line 13 of file clcontext\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CLContext::CLContext (\fBCLDevice\fP * cldevice, \fBCLPlatform\fP * clplatform)"
+
+.PP
+\fBCLContext\fP class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcldevice\fP a pointer to \fBCLDevice\fP object 
+.br
+\fIclplatform\fP a pointer to \fBCLPlatform\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file clcontext\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "cl_context CLContext::GetContext ()\fC [inline]\fP"
+
+.PP
+GetContext accessor for default context\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_context object 
+.RE
+.PP
+
+.PP
+Definition at line 34 of file clcontext\&.h\&.
+.SS "cl_device_id CLContext::GetDeviceID ()\fC [inline]\fP"
+
+.PP
+GetDeviceID accessor for device id\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_device_id 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file clcontext\&.h\&.
+.SS "cl_context CLContext::GetSharedContext ()\fC [inline]\fP"
+
+.PP
+GetSharedContext accesor for shared context\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+shared cl_context object 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file clcontext\&.h\&.
+.SS "bool CLContext::Setup ()"
+
+.PP
+Setup creates two OpenCL contexts: 1) a default context (non-shareable), and 2) shared context\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if booth context are created sucessully otherways it returns false 
+.RE
+.PP
+
+.PP
+Definition at line 12 of file clcontext\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

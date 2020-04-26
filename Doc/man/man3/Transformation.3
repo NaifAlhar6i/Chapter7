@@ -1,0 +1,218 @@
+.TH "Transformation" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transformation \- The \fBTransformation\fP class interface the transformation transactions and provides number pf functions\&. The class provides four main functions: 1)Translate, 2)Rotate, 3)LookAtCenter, and 4)Zoom\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <transformation\&.h>\fP
+.PP
+Inherited by \fBGLWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransformation\fP ()"
+.br
+.RI "\fI\fBTransformation\fP class constructor\&. \fP"
+.ti -1c
+.RI "void \fBTranslate\fP (QPoint currentposition, QRect viewport)"
+.br
+.RI "\fITranslate translate translate the current position based on the new delta X and Y\&. \fP"
+.ti -1c
+.RI "void \fBRotate\fP (QPoint currentposition)"
+.br
+.RI "\fIRotate rotates the current position\&. \fP"
+.ti -1c
+.RI "void \fBLookAtCenter\fP ()"
+.br
+.RI "\fILookAtCenter sets the trasformations matries to the default configration\&. \fP"
+.ti -1c
+.RI "void \fBZoom\fP (int value)"
+.br
+.RI "\fIZoom Zoom in an out\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QMatrix4x4 & \fBgetProjection\fP ()"
+.br
+.RI "\fIgetProjection gets the projection matrix \fP"
+.ti -1c
+.RI "QMatrix4x4 & \fBgetView\fP ()"
+.br
+.RI "\fIgetView gets the view matrix \fP"
+.ti -1c
+.RI "QMatrix4x4 & \fBgetModel\fP ()"
+.br
+.RI "\fIgetModel gets the Model matrix \fP"
+.ti -1c
+.RI "QMatrix4x4 & \fBgetRotation\fP ()"
+.br
+.RI "\fIgetRotation get the rotation matrix \fP"
+.ti -1c
+.RI "QPoint \fBgetLastPosition\fP ()"
+.br
+.RI "\fIgetLastPosition gets the last position \fP"
+.ti -1c
+.RI "void \fBsetLastPosition\fP (QPoint lastposition)"
+.br
+.RI "\fIsetLastPosition sets the last position \fP"
+.ti -1c
+.RI "void \fBupdateModel\fP ()"
+.br
+.RI "\fIupdateModel updates the model \fP"
+.ti -1c
+.RI "void \fBupdateProjection\fP (int width, int height)"
+.br
+.RI "\fIupdateProjection updates the projection matrix \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBTransformation\fP class interface the transformation transactions and provides number pf functions\&. The class provides four main functions: 1)Translate, 2)Rotate, 3)LookAtCenter, and 4)Zoom\&. 
+.PP
+Definition at line 14 of file transformation\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QPoint Transformation::getLastPosition ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getLastPosition gets the last position 
+.PP
+\fBReturns:\fP
+.RS 4
+the last position 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file transformation\&.h\&.
+.SS "QMatrix4x4& Transformation::getModel ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getModel gets the Model matrix 
+.PP
+\fBReturns:\fP
+.RS 4
+the Model matrix 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file transformation\&.h\&.
+.SS "QMatrix4x4& Transformation::getProjection ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getProjection gets the projection matrix 
+.PP
+\fBReturns:\fP
+.RS 4
+the projection matrix 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file transformation\&.h\&.
+.SS "QMatrix4x4& Transformation::getRotation ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getRotation get the rotation matrix 
+.PP
+\fBReturns:\fP
+.RS 4
+the rotation matrix 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file transformation\&.h\&.
+.SS "QMatrix4x4& Transformation::getView ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getView gets the view matrix 
+.PP
+\fBReturns:\fP
+.RS 4
+the view matrix 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file transformation\&.h\&.
+.SS "void Transformation::Rotate (QPoint currentposition)"
+
+.PP
+Rotate rotates the current position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcurrentposition\fP specifies the current position 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file transformation\&.cpp\&.
+.SS "void Transformation::setLastPosition (QPoint lastposition)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+setLastPosition sets the last position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlastposition\fP specifies the last position 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file transformation\&.h\&.
+.SS "void Transformation::Translate (QPoint currentposition, QRect viewport)"
+
+.PP
+Translate translate translate the current position based on the new delta X and Y\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcurrentposition\fP specifies the curent position 
+.br
+\fIviewport\fP specifies the viewport\&. It is used to unproject from th screen coordinates to the object coordinates 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file transformation\&.cpp\&.
+.SS "void Transformation::updateProjection (int width, int height)\fC [protected]\fP"
+
+.PP
+updateProjection updates the projection matrix 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwidth\fP specifies the width of the viewport 
+.br
+\fIheight\fP specifies the height of the viewport 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file transformation\&.cpp\&.
+.SS "void Transformation::Zoom (int value)"
+
+.PP
+Zoom Zoom in an out\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP specifies the zooming value 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file transformation\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

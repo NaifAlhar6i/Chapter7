@@ -1,0 +1,1133 @@
+.TH "CLTask" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLTask \- The \fBCLTask\fP class provides the functionalities for configuring the our CL* classes and provides a number of function to excute the OpenCL kernel under the default option\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cltask\&.h>\fP
+.PP
+Inherited by \fBCLGLTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLTask\fP ()"
+.br
+.RI "\fI\fBCLTask\fP class constructor\&. \fP"
+.ti -1c
+.RI "\fBCLDevice\fP * \fBGetCLDevice\fP ()"
+.br
+.RI "\fIGetCLDevice accessor for \fBCLDevice\fP\&. \fP"
+.ti -1c
+.RI "\fBCLPlatform\fP * \fBGetCLPlatform\fP ()"
+.br
+.RI "\fIGetCLPlatform accessor for \fBCLPlatform\fP\&. \fP"
+.ti -1c
+.RI "\fBCLContext\fP * \fBGetCLContext\fP ()"
+.br
+.RI "\fIGetCLContext accessor for \fBCLContext\fP\&. \fP"
+.ti -1c
+.RI "\fBCLCommand\fP * \fBGetCLCommand\fP ()"
+.br
+.RI "\fIGetCLCommand accessor for \fBCLCommand\fP\&. \fP"
+.ti -1c
+.RI "\fBCLProgram\fP * \fBGetCLProgram\fP ()"
+.br
+.RI "\fIGetCLProgram accessor for \fBCLProgram\fP\&. \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBGetCLCentralizeFrameKernel\fP ()"
+.br
+.RI "\fIGetCLCentralizeFrameKernel accessor for \fBCLKernel\fP\&. \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBGetCLComputeProteinCOMKernel\fP ()"
+.br
+.RI "\fIGetCLComputeProteinCOMKernel accessor for \fBCLKernel\fP\&. \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBGetCLComputeLipidCOMKernel\fP ()"
+.br
+.RI "\fIGetCLComputeLipidCOMKernel accessor for \fBCLKernel\fP\&. \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBGetCLComputeInteractionKernel\fP ()"
+.br
+.RI "\fIGetCLComputeInteractionKernel accessor for \fBCLKernel\fP\&. \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBGetCLComputeInteractionCOMKernel\fP ()"
+.br
+.RI "\fIGetCLComputeInteractionCOMKernel accessor for \fBCLKernel\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLSystemStructureBuffer\fP ()"
+.br
+.RI "\fIGetCLSystemStructureBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLFirstFrameIOBuffer\fP ()"
+.br
+.RI "\fIGetCLFirstFrameIOBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLFrameIOBuffer\fP ()"
+.br
+.RI "\fIGetCLFrameIOBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLCOMFrameIOBuffer\fP ()"
+.br
+.RI "\fIGetCLCOMFrameIOBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLColorIOBuffer\fP ()"
+.br
+.RI "\fIGetCLColorIOBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLCOMColorIOBuffer\fP ()"
+.br
+.RI "\fIGetCLCOMColorIOBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLProteinSpaceIOBuffer\fP ()"
+.br
+.RI "\fIGetCLProteinSpaceIOBuffer acccessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLProteinAtomsBuffer\fP ()"
+.br
+.RI "\fIGetCLProteinAtomsBuffer accessor for CLmemory\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLLipidSpaceInOutBuffer\fP ()"
+.br
+.RI "\fIGetCLLipidSpaceInOutBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLLipidParticlesBuffer\fP ()"
+.br
+.RI "\fIGetCLLipidParticlesBuffer accesor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLParticlesIdentityBuffer\fP ()"
+.br
+.RI "\fIGetCLParticlesIdentityBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLParticlesInteractionInOutBuffer\fP ()"
+.br
+.RI "\fIGetCLParticlesInteractionInOutBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLReferenceProteinIBuffer\fP ()"
+.br
+.RI "\fIGetCLReferenceProteinIBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBGetCLInteractionCountIOBuffer\fP ()"
+.br
+.RI "\fIGetCLInteractionCountIOBuffer accessor for \fBCLMemory\fP\&. \fP"
+.ti -1c
+.RI "void \fBSetTimerState\fP (bool state)"
+.br
+.RI "\fISetTimerState specifying the time calculation state\&. \fP"
+.ti -1c
+.RI "bool \fBInstallOpenCL\fP ()"
+.br
+.RI "\fIInstallOpenCL installing the essential OpenCL objects (device, platform, context, command, program, and kernel) \fP"
+.ti -1c
+.RI "void \fBCentralizeFrame\fP (void *frame, float boxdimensionsX, float boxdimensionsY, float boxdimensionsZ, float minboxdimensionsX, float minboxdimensionsY, float minboxdimensionsZ, float maxboxdimensionsX, float maxboxdimensionsY, float maxboxdimensionsZ, unsigned int atomsnumber, unsigned int workitemssize=0, unsigned int localsize=0)"
+.br
+.RI "\fICentralizeFrame\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinCOM\fP (void *proteinSpaces, void *proteinParticles, unsigned int proteinsnumber, unsigned int proteinparticlesnumber, unsigned int workitemssize=256, unsigned int localsize=0)"
+.br
+.RI "\fIComputeProteinCOM computes the proteins center of mass\&. \fP"
+.ti -1c
+.RI "void \fBComputeLipidCOM\fP (void *lipidSpaces, void *lipidParticles, unsigned int lipidsnumber, unsigned int lipidparticlesnumber, unsigned int workitemssize=256, unsigned int localsize=0)"
+.br
+.RI "\fIComputeLipidCOM computes\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinLipidInteraction\fP (void *frame, void *color, void *systemstructure, void *proteinspaces, void *proteinparticles, unsigned int atomsnumber, float interactiondistance, unsigned int workitemssize=0, unsigned int localsize=0)"
+.br
+.RI "\fIComputeProteinLipidInteraction computes the protein-lipid interaction based on the interactiondistance\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLDevice\fP * \fBgetCLDevice\fP ()"
+.br
+.RI "\fIgetCLDevice private accessor for \fBCLDevice\fP \fP"
+.ti -1c
+.RI "\fBCLPlatform\fP * \fBgetCLPlatform\fP ()"
+.br
+.RI "\fIgetCLPlatform private accessor for \fBCLPlatform\fP \fP"
+.ti -1c
+.RI "\fBCLContext\fP * \fBgetCLContext\fP ()"
+.br
+.RI "\fIgetCLContext private accessor for \fBCLContext\fP \fP"
+.ti -1c
+.RI "\fBCLCommand\fP * \fBgetCLCommand\fP ()"
+.br
+.RI "\fIgetCLCommand pivate accessor for \fBCLCommand\fP \fP"
+.ti -1c
+.RI "\fBCLProgram\fP * \fBgetCLProgram\fP ()"
+.br
+.RI "\fIgetCLProgram private accessor for \fBCLProgram\fP \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBgetCLCentralizeFrameKernel\fP ()"
+.br
+.RI "\fIgetCLCentralizeFrameKernel private accessor for \fBCLKernel\fP \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBgetCLComputeProteinCOMKernel\fP ()"
+.br
+.RI "\fIgetCLComputeProteinCOMKernel private accessor for \fBCLKernel\fP \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBgetCLComputeLipidCOMKernel\fP ()"
+.br
+.RI "\fIgetCLComputeLipidCOMKernel privare accessor for \fBCLKernel\fP \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBgetCLComputeInteractionKernel\fP ()"
+.br
+.RI "\fIgetCLComputeInteractionKernel private accessor for \fBCLKernel\fP \fP"
+.ti -1c
+.RI "\fBCLKernel\fP * \fBgetCLComputeInteractionCOMKernel\fP ()"
+.br
+.RI "\fIgetCLComputeInteractionCOMKernel private accessor for \fBCLKernel\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLSystemStructureBuffer\fP ()"
+.br
+.RI "\fIgetCLSystemStructureBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLFirstFrameIOBuffer\fP ()"
+.br
+.RI "\fIgetCLFirstFrameIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLFrameIOBuffer\fP ()"
+.br
+.RI "\fIgetCLFrameIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLCOMFrameIOBuffer\fP ()"
+.br
+.RI "\fIgetCLCOMFrameIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLColorIOBuffer\fP ()"
+.br
+.RI "\fIgetCLColorIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLCOMColorIOBuffer\fP ()"
+.br
+.RI "\fIgetCLCOMColorIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLProteinSpaceIOBuffer\fP ()"
+.br
+.RI "\fIgetCLProteinSpaceIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLProteinAtomsBuffer\fP ()"
+.br
+.RI "\fIgetCLProteinAtomsBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLLipidSpaceInOutBuffer\fP ()"
+.br
+.RI "\fIgetCLLipidSpaceInOutBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLLipidParticlesBuffer\fP ()"
+.br
+.RI "\fIgetCLLipidParticlesBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLParticlesIdentityBuffer\fP ()"
+.br
+.RI "\fIgetCLParticlesIdentityBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLParticlesInteractionInOutBuffer\fP ()"
+.br
+.RI "\fIgetCLParticlesInteractionInOutBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLReferenceProteinIBuffer\fP ()"
+.br
+.RI "\fIgetCLReferenceProteinIBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "\fBCLMemory\fP * \fBgetCLInteractionCountIOBuffer\fP ()"
+.br
+.RI "\fIgetCLInteractionCountIOBuffer private accessor for \fBCLMemory\fP \fP"
+.ti -1c
+.RI "size_t \fBgetKernelGlobalSize\fP ()"
+.br
+.RI "\fIgetKernelGlobalSize private accessor for kernel global size \fP"
+.ti -1c
+.RI "size_t \fBgetWorkItemSize\fP ()"
+.br
+.RI "\fIgetWorkItemSize private accessor for work items size \fP"
+.ti -1c
+.RI "size_t \fBgetKernelLocalSize\fP ()"
+.br
+.RI "\fIgetKernelLocalSize private accessor for kernel local size \fP"
+.ti -1c
+.RI "bool \fBgetTimerState\fP ()"
+.br
+.RI "\fIgetTimerState accessor for teimer state \fP"
+.ti -1c
+.RI "void \fBsetKernelGlobalSize\fP (size_t size)"
+.br
+.RI "\fIsetKernelGlobalSize setter for the kernel global size \fP"
+.ti -1c
+.RI "void \fBsetWorkItemSize\fP (size_t size)"
+.br
+.RI "\fIsetWorkItemSize setter for the work items size \fP"
+.ti -1c
+.RI "void \fBsetKernelLocalSize\fP (size_t size)"
+.br
+.RI "\fIsetKernelLocalSize setter for the kernel local size \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLTask\fP class provides the functionalities for configuring the our CL* classes and provides a number of function to excute the OpenCL kernel under the default option\&. 
+.PP
+Definition at line 13 of file cltask\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CLTask::CentralizeFrame (void * frame, float boxdimensionsX, float boxdimensionsY, float boxdimensionsZ, float minboxdimensionsX, float minboxdimensionsY, float minboxdimensionsZ, float maxboxdimensionsX, float maxboxdimensionsY, float maxboxdimensionsZ, unsigned int atomsnumber, unsigned int workitemssize = \fC0\fP, unsigned int localsize = \fC0\fP)"
+
+.PP
+CentralizeFrame\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP 
+.br
+\fIboxdimensionsX\fP 
+.br
+\fIboxdimensionsY\fP 
+.br
+\fIboxdimensionsZ\fP 
+.br
+\fIminboxdimensionsX\fP 
+.br
+\fIminboxdimensionsY\fP 
+.br
+\fIminboxdimensionsZ\fP 
+.br
+\fImaxboxdimensionsX\fP 
+.br
+\fImaxboxdimensionsY\fP 
+.br
+\fImaxboxdimensionsZ\fP 
+.br
+\fIatomsnumber\fP 
+.br
+\fIworkitemssize\fP 
+.br
+\fIlocalsize\fP 
+.RE
+.PP
+
+.PP
+Definition at line 256 of file cltask\&.cpp\&.
+.SS "void CLTask::ComputeLipidCOM (void * lipidSpaces, void * lipidParticles, unsigned int lipidsnumber, unsigned int lipidparticlesnumber, unsigned int workitemssize = \fC256\fP, unsigned int localsize = \fC0\fP)"
+
+.PP
+ComputeLipidCOM computes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlipidSpaces\fP 
+.br
+\fIlipidParticles\fP 
+.br
+\fIlipidsnumber\fP 
+.br
+\fIlipidparticlesnumber\fP 
+.br
+\fIworkitemssize\fP 
+.br
+\fIlocalsize\fP 
+.RE
+.PP
+
+.PP
+Definition at line 451 of file cltask\&.cpp\&.
+.SS "void CLTask::ComputeProteinCOM (void * proteinSpaces, void * proteinParticles, unsigned int proteinsnumber, unsigned int proteinparticlesnumber, unsigned int workitemssize = \fC256\fP, unsigned int localsize = \fC0\fP)"
+
+.PP
+ComputeProteinCOM computes the proteins center of mass\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproteinSpaces\fP a void pointer to the structure of protein space\&. 
+.br
+\fIproteinParticles\fP a void pointer to the structure of protein particles\&. 
+.br
+\fIproteinsnumber\fP the number of protein\&. 
+.br
+\fIproteinparticlesnumber\fP the number of protein particles\&. 
+.br
+\fIworkitemssize\fP the size of the work items to be excuted, we use the number of protein\&. 
+.br
+\fIlocalsize\fP the number of items per group\&. 
+.RE
+.PP
+
+.PP
+Definition at line 354 of file cltask\&.cpp\&.
+.SS "void CLTask::ComputeProteinLipidInteraction (void * frame, void * color, void * systemstructure, void * proteinspaces, void * proteinparticles, unsigned int atomsnumber, float interactiondistance, unsigned int workitemssize = \fC0\fP, unsigned int localsize = \fC0\fP)"
+
+.PP
+ComputeProteinLipidInteraction computes the protein-lipid interaction based on the interactiondistance\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP a void pointer to the frame data 
+.br
+\fIcolor\fP a void pointer to the color data 
+.br
+\fIsystemstructure\fP a void pointer to the system structure\&. 
+.br
+\fIproteinspaces\fP a void pointer to the protein space\&. 
+.br
+\fIproteinparticles\fP a void pointer to the protein particles 
+.br
+\fIatomsnumber\fP the number of system atoms 
+.br
+\fIinteractiondistance\fP the maximum distance to be used in the interaction test 
+.br
+\fIworkitemssize\fP the size of the work items to be excuted, we use the number of syatem atoms\&. 
+.br
+\fIlocalsize\fP the number of items per group\&. 
+.RE
+.PP
+
+.PP
+Definition at line 551 of file cltask\&.cpp\&.
+.SS "\fBCLKernel\fP* CLTask::GetCLCentralizeFrameKernel ()\fC [inline]\fP"
+
+.PP
+GetCLCentralizeFrameKernel accessor for \fBCLKernel\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to CentralizeFrameKernel object 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::getCLCentralizeFrameKernel ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLCentralizeFrameKernel private accessor for \fBCLKernel\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the CentralizeFrame Kernel 
+.RE
+.PP
+
+.PP
+Definition at line 270 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLColorIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLColorIOBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ColorIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLColorIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLColorIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ColorIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 324 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLCOMColorIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLCOMColorIOBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to COMColorIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLCOMColorIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLCOMColorIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the COMColorIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 330 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLCOMFrameIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLCOMFrameIOBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to COMFrameIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLCOMFrameIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLCOMFrameIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the COMFrameIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 318 of file cltask\&.h\&.
+.SS "\fBCLCommand\fP* CLTask::GetCLCommand ()\fC [inline]\fP"
+
+.PP
+GetCLCommand accessor for \fBCLCommand\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to \fBCLCommand\fP 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file cltask\&.h\&.
+.SS "\fBCLCommand\fP* CLTask::getCLCommand ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLCommand pivate accessor for \fBCLCommand\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBCLCommand\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 258 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::GetCLComputeInteractionCOMKernel ()\fC [inline]\fP"
+
+.PP
+GetCLComputeInteractionCOMKernel accessor for \fBCLKernel\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ComputeInteractionCOMKernel object 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::getCLComputeInteractionCOMKernel ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLComputeInteractionCOMKernel private accessor for \fBCLKernel\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ComputeInteractionCOM Kernel 
+.RE
+.PP
+
+.PP
+Definition at line 294 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::GetCLComputeInteractionKernel ()\fC [inline]\fP"
+
+.PP
+GetCLComputeInteractionKernel accessor for \fBCLKernel\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ComputeInteractionKernel object 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::getCLComputeInteractionKernel ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLComputeInteractionKernel private accessor for \fBCLKernel\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ComputeInteraction Kernel 
+.RE
+.PP
+
+.PP
+Definition at line 288 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::GetCLComputeLipidCOMKernel ()\fC [inline]\fP"
+
+.PP
+GetCLComputeLipidCOMKernel accessor for \fBCLKernel\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a poiter to ComputeLipidCOMKernel object 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::getCLComputeLipidCOMKernel ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLComputeLipidCOMKernel privare accessor for \fBCLKernel\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ComputeLipidCOM Kernel 
+.RE
+.PP
+
+.PP
+Definition at line 282 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::GetCLComputeProteinCOMKernel ()\fC [inline]\fP"
+
+.PP
+GetCLComputeProteinCOMKernel accessor for \fBCLKernel\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ComputeProteinCOMKernel object 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file cltask\&.h\&.
+.SS "\fBCLKernel\fP* CLTask::getCLComputeProteinCOMKernel ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLComputeProteinCOMKernel private accessor for \fBCLKernel\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ComputeProteinCOM Kernel 
+.RE
+.PP
+
+.PP
+Definition at line 276 of file cltask\&.h\&.
+.SS "\fBCLContext\fP* CLTask::GetCLContext ()\fC [inline]\fP"
+
+.PP
+GetCLContext accessor for \fBCLContext\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to \fBCLContext\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file cltask\&.h\&.
+.SS "\fBCLContext\fP* CLTask::getCLContext ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLContext private accessor for \fBCLContext\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBCLContext\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 252 of file cltask\&.h\&.
+.SS "\fBCLDevice\fP* CLTask::GetCLDevice ()\fC [inline]\fP"
+
+.PP
+GetCLDevice accessor for \fBCLDevice\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to \fBCLDevice\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file cltask\&.h\&.
+.SS "\fBCLDevice\fP* CLTask::getCLDevice ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLDevice private accessor for \fBCLDevice\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBCLDevice\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 240 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLFirstFrameIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLFirstFrameIOBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to FirstFrameIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLFirstFrameIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLFirstFrameIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the FirstFrameIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 306 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLFrameIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLFrameIOBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to FrameIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLFrameIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLFrameIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the FrameIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 312 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLInteractionCountIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLInteractionCountIOBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to InteractionCountIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLInteractionCountIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLInteractionCountIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the InteractionCountIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 378 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLLipidParticlesBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLLipidParticlesBuffer accesor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to LipidParticlesBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 140 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLLipidParticlesBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLLipidParticlesBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the LipidParticles memory object 
+.RE
+.PP
+
+.PP
+Definition at line 354 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLLipidSpaceInOutBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLLipidSpaceInOutBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to LipidSpaceInOutBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLLipidSpaceInOutBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLLipidSpaceInOutBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the LipidSpaceInOut memory object 
+.RE
+.PP
+
+.PP
+Definition at line 348 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLParticlesIdentityBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLParticlesIdentityBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ParticlesIdentityBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLParticlesIdentityBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLParticlesIdentityBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ParticlesIdentity memory object 
+.RE
+.PP
+
+.PP
+Definition at line 360 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLParticlesInteractionInOutBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLParticlesInteractionInOutBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ParticlesInteractionInOutBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 152 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLParticlesInteractionInOutBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLParticlesInteractionInOutBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ParticlesInteractionInOut memory object 
+.RE
+.PP
+
+.PP
+Definition at line 366 of file cltask\&.h\&.
+.SS "\fBCLPlatform\fP* CLTask::GetCLPlatform ()\fC [inline]\fP"
+
+.PP
+GetCLPlatform accessor for \fBCLPlatform\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to \fBCLPlatform\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file cltask\&.h\&.
+.SS "\fBCLPlatform\fP* CLTask::getCLPlatform ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLPlatform private accessor for \fBCLPlatform\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBCLPlatform\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file cltask\&.h\&.
+.SS "\fBCLProgram\fP* CLTask::GetCLProgram ()\fC [inline]\fP"
+
+.PP
+GetCLProgram accessor for \fBCLProgram\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to \fBCLProgram\fP 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file cltask\&.h\&.
+.SS "\fBCLProgram\fP* CLTask::getCLProgram ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLProgram private accessor for \fBCLProgram\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBCLProgram\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 264 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLProteinAtomsBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLProteinAtomsBuffer accessor for CLmemory\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ProteinAtomsBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 128 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLProteinAtomsBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLProteinAtomsBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ProteinAtoms memory object 
+.RE
+.PP
+
+.PP
+Definition at line 342 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLProteinSpaceIOBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLProteinSpaceIOBuffer acccessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ProteinSpaceIOBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLProteinSpaceIOBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLProteinSpaceIOBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ProteinSpaceIO memory object 
+.RE
+.PP
+
+.PP
+Definition at line 336 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLReferenceProteinIBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLReferenceProteinIBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to ReferenceProteinIBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 158 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLReferenceProteinIBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLReferenceProteinIBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the ReferenceProteinI memory object 
+.RE
+.PP
+
+.PP
+Definition at line 372 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::GetCLSystemStructureBuffer ()\fC [inline]\fP"
+
+.PP
+GetCLSystemStructureBuffer accessor for \fBCLMemory\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to SystemStructureBuffer 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file cltask\&.h\&.
+.SS "\fBCLMemory\fP* CLTask::getCLSystemStructureBuffer ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getCLSystemStructureBuffer private accessor for \fBCLMemory\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the SystemStructure memory object 
+.RE
+.PP
+
+.PP
+Definition at line 300 of file cltask\&.h\&.
+.SS "size_t CLTask::getKernelGlobalSize ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getKernelGlobalSize private accessor for kernel global size 
+.PP
+\fBReturns:\fP
+.RS 4
+the kernel global size 
+.RE
+.PP
+
+.PP
+Definition at line 384 of file cltask\&.h\&.
+.SS "size_t CLTask::getKernelLocalSize ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getKernelLocalSize private accessor for kernel local size 
+.PP
+\fBReturns:\fP
+.RS 4
+the local kernel size 
+.RE
+.PP
+
+.PP
+Definition at line 396 of file cltask\&.h\&.
+.SS "bool CLTask::getTimerState ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getTimerState accessor for teimer state 
+.PP
+\fBReturns:\fP
+.RS 4
+the timer state 
+.RE
+.PP
+
+.PP
+Definition at line 402 of file cltask\&.h\&.
+.SS "size_t CLTask::getWorkItemSize ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+getWorkItemSize private accessor for work items size 
+.PP
+\fBReturns:\fP
+.RS 4
+the work item size 
+.RE
+.PP
+
+.PP
+Definition at line 390 of file cltask\&.h\&.
+.SS "bool CLTask::InstallOpenCL ()"
+
+.PP
+InstallOpenCL installing the essential OpenCL objects (device, platform, context, command, program, and kernel) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if they installed sucessull otherways returns false\&. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file cltask\&.cpp\&.
+.SS "void CLTask::setKernelGlobalSize (size_t size)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+setKernelGlobalSize setter for the kernel global size 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP the global size of the kernel 
+.RE
+.PP
+
+.PP
+Definition at line 408 of file cltask\&.h\&.
+.SS "void CLTask::setKernelLocalSize (size_t size)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+setKernelLocalSize setter for the kernel local size 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP the kernel local size 
+.RE
+.PP
+
+.PP
+Definition at line 420 of file cltask\&.h\&.
+.SS "void CLTask::SetTimerState (bool state)\fC [inline]\fP"
+
+.PP
+SetTimerState specifying the time calculation state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP true to calculate the processing time\&. If the parameter is false then no time calculation is done\&. 
+.RE
+.PP
+
+.PP
+Definition at line 170 of file cltask\&.h\&.
+.SS "void CLTask::setWorkItemSize (size_t size)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+setWorkItemSize setter for the work items size 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP the work item size 
+.RE
+.PP
+
+.PP
+Definition at line 414 of file cltask\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

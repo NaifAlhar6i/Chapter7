@@ -1,0 +1,96 @@
+.TH "XTCManager" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XTCManager \- The \fBXTCManager\fP class is reponsible for handeling the XTC data\&. \fBXTCManager\fP reqires a valid pointer to \fBGROManager\fP object\&. The \fBXTCManager\fP class provides one main function: FetchFrames to loop through the xtc file and load the frames one by one\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <xtcmanager\&.h>\fP
+.PP
+Inherits QObject, and \fBMemoryManager\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBFrameFetched\fP (uint frameindex, void *frame, QVector3D systemdimention, QVector3D minsystemdimention, QVector3D maxsystemdimention)"
+.br
+.RI "\fIFrameFetched signal to be fired on feaching a frame\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXTCManager\fP (\fBGROManager\fP *gromanager)"
+.br
+.RI "\fI\fBXTCManager\fP class constructure\&. \fP"
+.ti -1c
+.RI "void \fBFetchFrames\fP (const unsigned int start, const unsigned int end, short stride=0)"
+.br
+.RI "\fIFetchFrames loops through the xtc file to fetch the frames frame by frame\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBXTCManager\fP class is reponsible for handeling the XTC data\&. \fBXTCManager\fP reqires a valid pointer to \fBGROManager\fP object\&. The \fBXTCManager\fP class provides one main function: FetchFrames to loop through the xtc file and load the frames one by one\&. 
+.PP
+Definition at line 14 of file xtcmanager\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "XTCManager::XTCManager (\fBGROManager\fP * gromanager)"
+
+.PP
+\fBXTCManager\fP class constructure\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgromanager\fP specifies a pointer to \fBGROManager\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file xtcmanager\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void XTCManager::FetchFrames (const unsigned int start, const unsigned int end, short stride = \fC0\fP)"
+
+.PP
+FetchFrames loops through the xtc file to fetch the frames frame by frame\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP specifies the starting time step or the first frame to be fetched 
+.br
+\fIend\fP specifies the last frame or time step that to be fetched 
+.br
+\fIstride\fP specifies the number of time step to be skiped for each loop\&. 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file xtcmanager\&.cpp\&.
+.SS "void XTCManager::FrameFetched (uint frameindex, void * frame, QVector3D systemdimention, QVector3D minsystemdimention, QVector3D maxsystemdimention)\fC [signal]\fP"
+
+.PP
+FrameFetched signal to be fired on feaching a frame\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index or the time step number 
+.br
+\fIframe\fP specifies the fetched frame 
+.br
+\fIsystemdimention\fP specifies the system dimention for the current time step 
+.br
+\fIminsystemdimention\fP specifies the min system dimention for the current time step 
+.br
+\fImaxsystemdimention\fP specifies the system max dimention for the current time step 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

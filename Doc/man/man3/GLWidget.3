@@ -1,0 +1,169 @@
+.TH "GLWidget" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GLWidget \- The \fBGLWidget\fP class the QOpenGL widget\&. This class is responsible for handeling the OpenGL context and all the OpenGL states\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <glwidget\&.h>\fP
+.PP
+Inherits QOpenGLWidget, QOpenGLFunctions, \fBTransformation\fP, and \fBGLManager\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBFrameRateUpdated\fP (int)"
+.br
+.RI "\fIFrameRateUpdated signals to be fired on frame is done\&. \fP"
+.ti -1c
+.RI "void \fBGLinitialized\fP ()"
+.br
+.RI "\fIGLinitialized signals to be fired on OpenGL objects initilized\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGLWidget\fP (QWidget *parent=0)"
+.br
+.RI "\fI\fBGLWidget\fP class constructor\&. \fP"
+.ti -1c
+.RI "int \fBUpdateParticles\fP (void *particle, void *color, bool map=false)"
+.br
+.RI "\fIUpdateParticles updates particles data\&. \fP"
+.ti -1c
+.RI "int \fBUpdateParticles\fP (void *particle, bool map=false)"
+.br
+.RI "\fIUpdateParticles updates particles data\&. \fP"
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBzoom\fP (int value)"
+.br
+.RI "\fIzoom zoom in and out \fP"
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *)"
+.br
+.RI "\fImousePressEvent \fP"
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *)"
+.br
+.RI "\fImouseMoveEvent \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitializeGL\fP () Q_DECL_OVERRIDE"
+.br
+.RI "\fIinitializeGL initilizes OpenGL objects \fP"
+.ti -1c
+.RI "void \fBresizeGL\fP (int w, int h) Q_DECL_OVERRIDE"
+.br
+.RI "\fIresizeGL resizes viewport \fP"
+.ti -1c
+.RI "void \fBpaintGL\fP () Q_DECL_OVERRIDE"
+.br
+.RI "\fIpaintGL paints the OpenGL \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBGLWidget\fP class the QOpenGL widget\&. This class is responsible for handeling the OpenGL context and all the OpenGL states\&. 
+.PP
+Definition at line 20 of file glwidget\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GLWidget::GLWidget (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+\fBGLWidget\fP class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP specifies the parent 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file glwidget\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GLWidget::resizeGL (int w, int h)\fC [protected]\fP"
+
+.PP
+resizeGL resizes viewport 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIw\fP specifies the viewport widght 
+.br
+\fIh\fP specifies the viewport hight 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file glwidget\&.cpp\&.
+.SS "int GLWidget::UpdateParticles (void * particle, void * color, bool map = \fCfalse\fP)"
+
+.PP
+UpdateParticles updates particles data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP specifies the particle data 
+.br
+\fIcolor\fP specifies the vertices color data 
+.br
+\fImap\fP specifies the method to be used to update the OpenGL buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if data updated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file glwidget\&.cpp\&.
+.SS "int GLWidget::UpdateParticles (void * particle, bool map = \fCfalse\fP)"
+
+.PP
+UpdateParticles updates particles data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP specifies the particle data 
+.br
+\fImap\fP specifies the method to be used to update the OpenGL buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if data updated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file glwidget\&.cpp\&.
+.SS "void GLWidget::zoom (int value)\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+zoom zoom in and out 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP zooming value 
+.RE
+.PP
+
+.PP
+Definition at line 119 of file glwidget\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

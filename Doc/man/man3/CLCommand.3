@@ -1,0 +1,98 @@
+.TH "CLCommand" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLCommand \- The \fBCLCommand\fP class interfaces the OpenCL cl_command_queue object\&. \fBCLCommand\fP reqires a valid pointer to a \fBCLContext\fP\&. The class provides three main functions Setup, GetCommand and GetSharedCommand\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clcommand\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLCommand\fP (\fBCLContext\fP *clcontext)"
+.br
+.RI "\fI\fBCLCommand\fP class constructor\&. \fP"
+.ti -1c
+.RI "bool \fBSetup\fP ()"
+.br
+.RI "\fISetup creates two OpenCL commands: 1) a default command (non-shareable), and 2) shared command\&. \fP"
+.ti -1c
+.RI "cl_command_queue \fBGetCommand\fP ()"
+.br
+.RI "\fIGetCommand is a global accessor to the default command\&. \fP"
+.ti -1c
+.RI "cl_command_queue \fBGetSharedCommand\fP ()"
+.br
+.RI "\fIGetSharedCommand is a global accessor to the shared command\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLCommand\fP class interfaces the OpenCL cl_command_queue object\&. \fBCLCommand\fP reqires a valid pointer to a \fBCLContext\fP\&. The class provides three main functions Setup, GetCommand and GetSharedCommand\&. 
+.PP
+Definition at line 11 of file clcommand\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CLCommand::CLCommand (\fBCLContext\fP * clcontext)"
+
+.PP
+\fBCLCommand\fP class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclcontext\fP a pointer to \fBCLContext\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 5 of file clcommand\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "cl_command_queue CLCommand::GetCommand ()\fC [inline]\fP"
+
+.PP
+GetCommand is a global accessor to the default command\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_command_queue object 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file clcommand\&.h\&.
+.SS "cl_command_queue CLCommand::GetSharedCommand ()\fC [inline]\fP"
+
+.PP
+GetSharedCommand is a global accessor to the shared command\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_command_queue object 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file clcommand\&.h\&.
+.SS "bool CLCommand::Setup ()"
+
+.PP
+Setup creates two OpenCL commands: 1) a default command (non-shareable), and 2) shared command\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if booth commands are created sucessully otherways it returns false 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file clcommand\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

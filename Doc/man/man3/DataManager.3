@@ -1,0 +1,409 @@
+.TH "DataManager" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DataManager \- The \fBDataManager\fP is reponsible for managing the I/O process\&. The class provides a number of I/O functions and comunicates with other classes through signals and slots\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <datamanager\&.h>\fP
+.PP
+Inherits QObject, \fBSTL\fP, and \fBMMF\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBCentralizeFrame\fP (unsigned int index, void *frame, QVector3D dimentions, QVector3D mindimentions, QVector3D maxdimentions)"
+.br
+.RI "\fICentralizeFrame centrizes the frame data\&. \fP"
+.ti -1c
+.RI "void \fBSaveCentralizeFrameToFile\fP (void *frame)"
+.br
+.RI "\fISaveCentralizeFrameToFile saves the centrized frame to a file\&. \fP"
+.ti -1c
+.RI "void \fBSaveProteinParticlesCOMToFile\fP (void *proteinspace)"
+.br
+.RI "\fISaveProteinParticlesCOMToFile saves the center of the mass of the protein data\&. \fP"
+.ti -1c
+.RI "void \fBSaveLipidParticlesCOMToFile\fP (void *lipidspace)"
+.br
+.RI "\fISaveLipidParticlesCOMToFile saves the center of mass of lipid particles\&. \fP"
+.ti -1c
+.RI "void \fBSaveProteinSpace\fP (void *proteinspace)"
+.br
+.RI "\fISaveProteinSpace saves protein space\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBCentralizeFrameComputed\fP (void *frame)"
+.br
+.RI "\fICentralizeFrameComputed signal to be invoked on the frame centrized is computed\&. \fP"
+.ti -1c
+.RI "void \fBProteinSpaceComputed\fP (void *proteinspace)"
+.br
+.RI "\fIProteinSpaceComputed signal to be invoked on the protein space computed\&. \fP"
+.ti -1c
+.RI "void \fBLipidSpaceComputed\fP (void *lipidspace)"
+.br
+.RI "\fILipidSpaceComputed signal to be computed on the lipid space computed\&. \fP"
+.ti -1c
+.RI "void \fBProteinLipidInteractionComputed\fP (void *frame, void *color, int frameindex)"
+.br
+.RI "\fIProteinLipidInteractionComputed signal to be computed on the protein lipid interaction computed\&. \fP"
+.ti -1c
+.RI "void \fBProteinLipidInteractionComputed\fP (void *frame, int frameindex)"
+.br
+.RI "\fIProteinLipidInteractionComputed signal to be invoked on the protein lipid interaction computed\&. \fP"
+.ti -1c
+.RI "void \fBFrameFixed\fP (void *frame)"
+.br
+.RI "\fIFrameFixed signal to be involked on time step (frame) PBC fixed\&. \fP"
+.ti -1c
+.RI "void \fBFileDataRead\fP (int)"
+.br
+.RI "\fIFileDataRead signal to be involke on the file data read\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataManager\fP (\fBCLManager\fP *clmanager)"
+.br
+.RI "\fI\fBDataManager\fP class constructore\&. \fP"
+.ti -1c
+.RI "void \fBSetProcessingState\fP (bool state)"
+.br
+.RI "\fISetProcessingState sets the processing state\&. \fP"
+.ti -1c
+.RI "void \fBFetchGROData\fP ()"
+.br
+.RI "\fIFetchGROData fetches the system info from the GRO file\&. \fP"
+.ti -1c
+.RI "void \fBFetchXTCFrames\fP (unsigned int start, unsigned int end, short stride=0)"
+.br
+.RI "\fIFetchXTCFrames fetches frames from the XTC file\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinCOM\fP (unsigned int frameindex)"
+.br
+.RI "\fIComputeProteinCOM computes the center of mass of protein\&. \fP"
+.ti -1c
+.RI "void \fBComputeLipidCOM\fP (unsigned int frameindex)"
+.br
+.RI "\fIComputeLipidCOM computes the center of mass of lipid\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinLipidInteraction\fP (unsigned int frameindex, bool mmf=false)"
+.br
+.RI "\fIComputeProteinLipidInteraction computes the protein lipid interaction\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinLipidInteractionOnTheFly\fP (unsigned int frameindex, QOpenGLBuffer *&vertex, GLuint colorbufferid, bool mmf=false)"
+.br
+.RI "\fIComputeProteinLipidInteractionOnTheFly computes the protein lipid interaction on the fly\&. \fP"
+.ti -1c
+.RI "void \fBGenerateAtomsPathFile\fP (long typesize, long atomsnumber, long framesnumber)"
+.br
+.RI "\fIGenerateAtomsPathFile generates atom path file\&. \fP"
+.ti -1c
+.RI "void \fBGenerateCOMAtomsPathFile\fP (long typesize, long atomsnumber, long framesnumber)"
+.br
+.RI "\fIGenerateCOMAtomsPathFile generates the center of mass of atoms path\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBDataManager\fP is reponsible for managing the I/O process\&. The class provides a number of I/O functions and comunicates with other classes through signals and slots\&. 
+.PP
+Definition at line 14 of file datamanager\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DataManager::DataManager (\fBCLManager\fP * clmanager)"
+
+.PP
+\fBDataManager\fP class constructore\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclmanager\fP specifies the Open cl manager \fBCLManager\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file datamanager\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DataManager::CentralizeFrame (unsigned int index, void * frame, QVector3D dimentions, QVector3D mindimentions, QVector3D maxdimentions)\fC [slot]\fP"
+
+.PP
+CentralizeFrame centrizes the frame data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP specifies the current time step nimber 
+.br
+\fIframe\fP a pointer to the current frame data (time step) 
+.br
+\fIdimentions\fP specifies the simulation box dimentions 
+.br
+\fImindimentions\fP specifies the minimum x, y, and z value of the dimention of the simulation box 
+.br
+\fImaxdimentions\fP specifies the maximum x, y, and z value of the dimentions of the simulation box 
+.RE
+.PP
+
+.PP
+Definition at line 288 of file datamanager\&.cpp\&.
+.SS "void DataManager::CentralizeFrameComputed (void * frame)\fC [signal]\fP"
+
+.PP
+CentralizeFrameComputed signal to be invoked on the frame centrized is computed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP a valid pointer to the computed frame 
+.RE
+.PP
+
+.SS "void DataManager::ComputeLipidCOM (unsigned int frameindex)"
+
+.PP
+ComputeLipidCOM computes the center of mass of lipid\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index or the time step number to be computed 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file datamanager\&.cpp\&.
+.SS "void DataManager::ComputeProteinCOM (unsigned int frameindex)"
+
+.PP
+ComputeProteinCOM computes the center of mass of protein\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index or the time step number to be computed 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file datamanager\&.cpp\&.
+.SS "void DataManager::ComputeProteinLipidInteraction (unsigned int frameindex, bool mmf = \fCfalse\fP)"
+
+.PP
+ComputeProteinLipidInteraction computes the protein lipid interaction\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index or the time step number to be computed 
+.br
+\fImmf\fP specifies the method to be used to read data from the disk if true then the \fBMMF\fP method will be used otherwise the \fBSTL\fP method will be used 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file datamanager\&.cpp\&.
+.SS "void DataManager::ComputeProteinLipidInteractionOnTheFly (unsigned int frameindex, QOpenGLBuffer *& vertex, GLuint colorbufferid, bool mmf = \fCfalse\fP)"
+
+.PP
+ComputeProteinLipidInteractionOnTheFly computes the protein lipid interaction on the fly\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index or the time step number to be computed 
+.br
+\fIvertex\fP specifies the 
+.br
+\fIcolorbufferid\fP 
+.br
+\fImmf\fP 
+.RE
+.PP
+
+.PP
+Definition at line 130 of file datamanager\&.cpp\&.
+.SS "void DataManager::FetchXTCFrames (unsigned int start, unsigned int end, short stride = \fC0\fP)"
+
+.PP
+FetchXTCFrames fetches frames from the XTC file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP specifies the first frame to be fetched 
+.br
+\fIend\fP specifies the last frame to be fetched 
+.br
+\fIstride\fP specified the number of time tepes to be skiped 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file datamanager\&.cpp\&.
+.SS "void DataManager::FrameFixed (void * frame)\fC [signal]\fP"
+
+.PP
+FrameFixed signal to be involked on time step (frame) PBC fixed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP a valid pointer to the current frame data (time step) 
+.RE
+.PP
+
+.SS "void DataManager::GenerateAtomsPathFile (long typesize, long atomsnumber, long framesnumber)"
+
+.PP
+GenerateAtomsPathFile generates atom path file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypesize\fP specifies the size of the data 
+.br
+\fIatomsnumber\fP specifies the number of atoms 
+.br
+\fIframesnumber\fP specifies the current time step number 
+.RE
+.PP
+
+.PP
+Definition at line 487 of file datamanager\&.cpp\&.
+.SS "void DataManager::GenerateCOMAtomsPathFile (long typesize, long atomsnumber, long framesnumber)"
+
+.PP
+GenerateCOMAtomsPathFile generates the center of mass of atoms path\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypesize\fP specifies the size of the data 
+.br
+\fIatomsnumber\fP specifies the number of atoms 
+.br
+\fIframesnumber\fP specifies the current time step number 
+.RE
+.PP
+
+.PP
+Definition at line 536 of file datamanager\&.cpp\&.
+.SS "void DataManager::LipidSpaceComputed (void * lipidspace)\fC [signal]\fP"
+
+.PP
+LipidSpaceComputed signal to be computed on the lipid space computed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlipidspace\fP a valid poiner to the lipid space 
+.RE
+.PP
+
+.SS "void DataManager::ProteinLipidInteractionComputed (void * frame, void * color, int frameindex)\fC [signal]\fP"
+
+.PP
+ProteinLipidInteractionComputed signal to be computed on the protein lipid interaction computed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP a valid pointer to the frame data 
+.br
+\fIcolor\fP a valid poiter to the vertex color data 
+.br
+\fIframeindex\fP specifies the current frame index (time step 
+.RE
+.PP
+
+.SS "void DataManager::ProteinLipidInteractionComputed (void * frame, int frameindex)\fC [signal]\fP"
+
+.PP
+ProteinLipidInteractionComputed signal to be invoked on the protein lipid interaction computed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP a valid pointer to the frame (time step) data 
+.br
+\fIframeindex\fP specifies the current frame (time step) 
+.RE
+.PP
+
+.SS "void DataManager::ProteinSpaceComputed (void * proteinspace)\fC [signal]\fP"
+
+.PP
+ProteinSpaceComputed signal to be invoked on the protein space computed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproteinspace\fP a valid pointer to the computed protein space 
+.RE
+.PP
+
+.SS "void DataManager::SaveCentralizeFrameToFile (void * frame)\fC [slot]\fP"
+
+.PP
+SaveCentralizeFrameToFile saves the centrized frame to a file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP a valid pointer to the centrized frame data 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file datamanager\&.cpp\&.
+.SS "void DataManager::SaveLipidParticlesCOMToFile (void * lipidspace)\fC [slot]\fP"
+
+.PP
+SaveLipidParticlesCOMToFile saves the center of mass of lipid particles\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlipidspace\fP a valid pointer to the lipid space 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file datamanager\&.cpp\&.
+.SS "void DataManager::SaveProteinParticlesCOMToFile (void * proteinspace)\fC [slot]\fP"
+
+.PP
+SaveProteinParticlesCOMToFile saves the center of the mass of the protein data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproteinspace\fP a pointer to the protein space 
+.RE
+.PP
+
+.PP
+Definition at line 348 of file datamanager\&.cpp\&.
+.SS "void DataManager::SaveProteinSpace (void * proteinspace)\fC [slot]\fP"
+
+.PP
+SaveProteinSpace saves protein space\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproteinspace\fP a valid pointer to the protein space 
+.RE
+.PP
+
+.PP
+Definition at line 419 of file datamanager\&.cpp\&.
+.SS "void DataManager::SetProcessingState (bool state)\fC [inline]\fP"
+
+.PP
+SetProcessingState sets the processing state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the processing state if true the processing will take place otherwise no processing will performed on the data 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file datamanager\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

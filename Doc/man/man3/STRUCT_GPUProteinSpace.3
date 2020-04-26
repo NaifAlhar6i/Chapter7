@@ -1,0 +1,69 @@
+.TH "STRUCT_GPUProteinSpace" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+STRUCT_GPUProteinSpace \- GPUProteinSpace contains the structure of the protein space\&. We manage this structure through the \fBDataStructure\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <structure\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned short \fBProteinID\fP"
+.br
+.ti -1c
+.RI "float \fBProteinCOM\fP [3]"
+.br
+.ti -1c
+.RI "float \fBZAxis\fP [2]"
+.br
+.ti -1c
+.RI "float \fBRadius\fP"
+.br
+.ti -1c
+.RI "float \fBavgProteinCOM\fP [3]"
+.br
+.ti -1c
+.RI "float \fBavgZAxis\fP [2]"
+.br
+.ti -1c
+.RI "float \fBavgRadius\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+GPUProteinSpace contains the structure of the protein space\&. We manage this structure through the \fBDataStructure\fP class\&. 
+
+the GPUProteinSpace has seven members: 1)protein id, 2)center of the mass of the protein, 3)far and near value of z axis, 4)radious of the protein space, 5)average of the protein path, 6) average of the far and near z value, and 7) average of the protein radius 
+.PP
+Definition at line 118 of file structure\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float STRUCT_GPUProteinSpace::avgProteinCOM[3]"
+contains the radius of the protein space avgProteinCOM contains the average of the center of the mass of the protein 
+.PP
+Definition at line 124 of file structure\&.h\&.
+.SS "float STRUCT_GPUProteinSpace::avgRadius"
+avgZAxis contains the avrage of the value of the near and far z axis 
+.PP
+Definition at line 126 of file structure\&.h\&.
+.SS "float STRUCT_GPUProteinSpace::ProteinCOM[3]"
+ProteinID contains the protein ID 
+.PP
+Definition at line 121 of file structure\&.h\&.
+.SS "float STRUCT_GPUProteinSpace::Radius"
+contains the newar and far value of the z axis 
+.PP
+Definition at line 123 of file structure\&.h\&.
+.SS "float STRUCT_GPUProteinSpace::ZAxis[2]"
+ProteinCOM contains the center of the mass of the protein 
+.PP
+Definition at line 122 of file structure\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

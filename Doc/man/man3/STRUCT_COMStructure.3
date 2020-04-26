@@ -1,0 +1,118 @@
+.TH "STRUCT_COMStructure" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+STRUCT_COMStructure \- COMStructureRecord contains the structure of the center of the mass of the system\&. We manage this structure through the \fBDataStructure\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <structure\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTRUCT_COMStructure\fP \fBlookup\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "\fBSTRUCT_COMStructure\fP * \fBlookupRef\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "unsigned int \fBgetCOMGroupIndex\fP ()"
+.br
+.ti -1c
+.RI "unsigned short \fBgetMoleculeType\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetFirstAtomIndex\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetCOMGroupAtomsNumber\fP ()"
+.br
+.ti -1c
+.RI "QVector3D \fBgetFTRPosition\fP ()"
+.br
+.ti -1c
+.RI "QVector3D \fBgetNBLPosition\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCOMGroupIndex\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "void \fBsetMoleculeType\fP (unsigned short type)"
+.br
+.ti -1c
+.RI "void \fBsetFirstAtomIndex\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "void \fBsetCOMGroupAtomsNumber\fP (unsigned int number)"
+.br
+.ti -1c
+.RI "void \fBsetFTRPosition\fP (QVector3D position)"
+.br
+.ti -1c
+.RI "void \fBsetNBLPosition\fP (QVector3D position)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_COMGroupIndex\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBm_MoleculeType\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBm_FirstAtomIndex\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBm_COMGroupAtomsNumber\fP"
+.br
+.ti -1c
+.RI "QVector3D \fBm_FTRPosition\fP"
+.br
+.ti -1c
+.RI "QVector3D \fBm_NBLPosition\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+COMStructureRecord contains the structure of the center of the mass of the system\&. We manage this structure through the \fBDataStructure\fP class\&. 
+
+the COMStructureRecord has six members: 1)center of mass group index, 2)molecule type, 3)first atom index, 4)center of mass group atom number, 5)the far top right position and 6) the near bottom left position of the group to define the group space The values of these memeberes are extracted from the GRO file\&. 
+.PP
+Definition at line 73 of file structure\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSTRUCT_COMStructure\fP STRUCT_COMStructure::lookup (unsigned int index)\fC [inline]\fP"
+m_NBLPosition contains the x, y and z values of the near bottom left position 
+.PP
+Definition at line 82 of file structure\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned int STRUCT_COMStructure::m_COMGroupAtomsNumber"
+m_FirstAtomIndex contains the index of the first atom in the real system structure 
+.PP
+Definition at line 78 of file structure\&.h\&.
+.SS "unsigned int STRUCT_COMStructure::m_FirstAtomIndex"
+m_MoleculeType contains the molecule type 
+.PP
+Definition at line 77 of file structure\&.h\&.
+.SS "QVector3D STRUCT_COMStructure::m_FTRPosition"
+m_COMGroupAtomsNumber contains the number of atoms in the center of mass group 
+.PP
+Definition at line 79 of file structure\&.h\&.
+.SS "unsigned short STRUCT_COMStructure::m_MoleculeType"
+m_COMGroupIndex contains the index of the center of mass group 
+.PP
+Definition at line 76 of file structure\&.h\&.
+.SS "QVector3D STRUCT_COMStructure::m_NBLPosition"
+m_FTRPosition contains the x, y and z values of the far top right position 
+.PP
+Definition at line 80 of file structure\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

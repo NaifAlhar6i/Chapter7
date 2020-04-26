@@ -1,0 +1,260 @@
+.TH "MainWindow" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainWindow \- The \fBMainWindow\fP class the Qt main window class\&. This class involves the user interface widgets including the canvas\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mainwindow\&.h>\fP
+.PP
+Inherits QMainWindow\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBStartRendering\fP (bool)"
+.br
+.RI "\fIStartRendering starts rendering the data set\&. \fP"
+.ti -1c
+.RI "void \fBUpdateParticle\fP (void *particle)"
+.br
+.RI "\fIUpdateParticle updates the particles\&. \fP"
+.ti -1c
+.RI "void \fBSetIOSTL\fP (bool state)"
+.br
+.RI "\fISetIOSTL sets the I/O \fBSTL\fP method state\&. \fP"
+.ti -1c
+.RI "void \fBSetIOMMF\fP (bool state)"
+.br
+.RI "\fISetIOMMF sets the I/O \fBMMF\fP method state\&. \fP"
+.ti -1c
+.RI "void \fBSetCLDefault\fP (bool state)"
+.br
+.RI "\fISetCLDefault sets CL to default (dont use Interoperability) \fP"
+.ti -1c
+.RI "void \fBSetCLInteroperability\fP (bool state)"
+.br
+.RI "\fISetCLInteroperability sets CL to CL-GL Interoperability\&. \fP"
+.ti -1c
+.RI "void \fBSetGLBufferData\fP (bool state)"
+.br
+.RI "\fISetGLBufferData sets uploading data to GPU using buffer data method\&. \fP"
+.ti -1c
+.RI "void \fBSetGLMapBuffer\fP (bool state)"
+.br
+.RI "\fISetGLMapBuffer sets uploading data to GPU using map buffer method\&. \fP"
+.ti -1c
+.RI "void \fBLoadFrame\fP ()"
+.br
+.RI "\fILoadFrame loads frame\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinLipidInteraction\fP ()"
+.br
+.RI "\fIComputeProteinLipidInteraction computes protein lipid interaction\&. \fP"
+.ti -1c
+.RI "void \fBUpdateFrameRateLabel\fP (int framerate)"
+.br
+.RI "\fIUpdateFrameRateLabel updates frame rate lable\&. \fP"
+.ti -1c
+.RI "void \fBProteinLipidInteractionComputed\fP (void *frame, void *color, int timeelapced)"
+.br
+.RI "\fIProteinLipidInteractionComputed slot to be invoked on protein lipid interaction is done\&. \fP"
+.ti -1c
+.RI "void \fBProteinLipidInteractionComputed\fP (void *frame, int timeelapced)"
+.br
+.RI "\fIProteinLipidInteractionComputed slot to be invoked on protein lipid interaction is done\&. \fP"
+.ti -1c
+.RI "void \fBOnFileDataRead\fP (int timeelapced)"
+.br
+.RI "\fIOnFileDataRead slot to be invoked on file data is read\&. \fP"
+.ti -1c
+.RI "void \fBOnGLinitialized\fP ()"
+.br
+.RI "\fIOnGLinitialized slot to be invoked on the OpenGL is intilized\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindow\fP (QWidget *parent=0)"
+.br
+.RI "\fI\fBMainWindow\fP class constructor\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMainWindow\fP class the Qt main window class\&. This class involves the user interface widgets including the canvas\&. 
+.PP
+Definition at line 19 of file mainwindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MainWindow::MainWindow (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+\fBMainWindow\fP class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP specifies the parent 
+.RE
+.PP
+
+.PP
+Definition at line 5 of file mainwindow\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MainWindow::OnFileDataRead (int timeelapced)\fC [slot]\fP"
+
+.PP
+OnFileDataRead slot to be invoked on file data is read\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeelapced\fP specicfies the time elapced 
+.RE
+.PP
+
+.PP
+Definition at line 220 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::ProteinLipidInteractionComputed (void * frame, void * color, int timeelapced)\fC [slot]\fP"
+
+.PP
+ProteinLipidInteractionComputed slot to be invoked on protein lipid interaction is done\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP specifies the frame data 
+.br
+\fIcolor\fP specifies the color data 
+.br
+\fItimeelapced\fP specicfies the time elapced 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::ProteinLipidInteractionComputed (void * frame, int timeelapced)\fC [slot]\fP"
+
+.PP
+ProteinLipidInteractionComputed slot to be invoked on protein lipid interaction is done\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframe\fP specifies the frame data 
+.br
+\fItimeelapced\fP specicfies the time elapced 
+.RE
+.PP
+
+.PP
+Definition at line 184 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::SetCLDefault (bool state)\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+SetCLDefault sets CL to default (dont use Interoperability) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the state true==on and false == off 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file mainwindow\&.h\&.
+.SS "void MainWindow::SetCLInteroperability (bool state)\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+SetCLInteroperability sets CL to CL-GL Interoperability\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the state true==on and false == off 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file mainwindow\&.h\&.
+.SS "void MainWindow::SetGLBufferData (bool state)\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+SetGLBufferData sets uploading data to GPU using buffer data method\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the state true==on and false == off 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file mainwindow\&.h\&.
+.SS "void MainWindow::SetGLMapBuffer (bool state)\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+SetGLMapBuffer sets uploading data to GPU using map buffer method\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the state true==on and false == off 
+.RE
+.PP
+
+.PP
+Definition at line 78 of file mainwindow\&.h\&.
+.SS "void MainWindow::SetIOMMF (bool state)\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+SetIOMMF sets the I/O \fBMMF\fP method state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the state true==on and false == off 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file mainwindow\&.h\&.
+.SS "void MainWindow::SetIOSTL (bool state)\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+SetIOSTL sets the I/O \fBSTL\fP method state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP specifies the state true==on and false == off 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file mainwindow\&.h\&.
+.SS "void MainWindow::UpdateFrameRateLabel (int framerate)\fC [slot]\fP"
+
+.PP
+UpdateFrameRateLabel updates frame rate lable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframerate\fP specifies the frame rate value 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::UpdateParticle (void * particle)\fC [slot]\fP"
+
+.PP
+UpdateParticle updates the particles\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP specifies the new particles 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file mainwindow\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

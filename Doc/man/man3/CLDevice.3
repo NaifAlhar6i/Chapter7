@@ -1,0 +1,66 @@
+.TH "CLDevice" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLDevice \- The \fBCLDevice\fP class interfces the OpenCL device object\&. The class provides two main functions: 1) Setup and 2) GetID\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cldevice\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLDevice\fP ()"
+.br
+.RI "\fI\fBCLDevice\fP class constructor\&. \fP"
+.ti -1c
+.RI "bool \fBSetup\fP ()"
+.br
+.RI "\fISetup creates an OpenCL device\&. \fP"
+.ti -1c
+.RI "cl_device_id \fBGetID\fP ()"
+.br
+.RI "\fIGetID: accessor for the device id\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLDevice\fP class interfces the OpenCL device object\&. The class provides two main functions: 1) Setup and 2) GetID\&. 
+.PP
+Definition at line 10 of file cldevice\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "cl_device_id CLDevice::GetID ()\fC [inline]\fP"
+
+.PP
+GetID: accessor for the device id\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_device_id object 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file cldevice\&.h\&.
+.SS "bool CLDevice::Setup ()"
+
+.PP
+Setup creates an OpenCL device\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if device is created sucessully otherways it returns false 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file cldevice\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

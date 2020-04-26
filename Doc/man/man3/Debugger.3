@@ -1,0 +1,100 @@
+.TH "Debugger" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Debugger \- The \fBDebugger\fP class provides debugging functionallities including information about the current class It aoutput the error describtion class name, function name and error detail\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <debugger\&.h>\fP
+.PP
+Inherited by \fBCLCommand\fP\fC [virtual]\fP, \fBCLContext\fP\fC [virtual]\fP, \fBCLDevice\fP\fC [virtual]\fP, \fBCLKernel\fP\fC [virtual]\fP, \fBCLMemory\fP\fC [virtual]\fP, \fBCLPlatform\fP\fC [virtual]\fP, \fBCLProgram\fP\fC [virtual]\fP, and \fBDataStructure\fP\fC [virtual]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDebugger\fP ()"
+.br
+.RI "\fI\fBDebugger\fP class constructor\&. \fP"
+.ti -1c
+.RI "void \fBDebug\fP (QString debug)"
+.br
+.RI "\fIDebug printout the error data\&. \fP"
+.ti -1c
+.RI "void \fBDebug\fP (QVector< QString > messages)"
+.br
+.RI "\fIDebug printout the error details\&. \fP"
+.ti -1c
+.RI "void \fBTimerStart\fP (QString tasktitle)"
+.br
+.RI "\fITimerStart fires the timer\&. \fP"
+.ti -1c
+.RI "void \fBTimerEnd\fP (QString tasktitle)"
+.br
+.RI "\fITimerEnd stop the timer and printout the time elapced\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBDebugger\fP class provides debugging functionallities including information about the current class It aoutput the error describtion class name, function name and error detail\&. 
+.PP
+Definition at line 12 of file debugger\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Debugger::Debug (QString debug)"
+
+.PP
+Debug printout the error data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdebug\fP specifies the error data 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file debugger\&.cpp\&.
+.SS "void Debugger::Debug (QVector< QString > messages)"
+
+.PP
+Debug printout the error details\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessages\fP specifies the error details including the class name \&.\&. etc 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file debugger\&.cpp\&.
+.SS "void Debugger::TimerEnd (QString tasktitle)"
+
+.PP
+TimerEnd stop the timer and printout the time elapced\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItasktitle\fP specifies the task name 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file debugger\&.cpp\&.
+.SS "void Debugger::TimerStart (QString tasktitle)"
+
+.PP
+TimerStart fires the timer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItasktitle\fP specifies the task name 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file debugger\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

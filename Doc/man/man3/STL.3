@@ -1,0 +1,91 @@
+.TH "STL" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+STL \- The \fBSTL\fP class interfaces the \fBSTL\fP method\&. The \fBSTL\fP class provides three main functions: 1)FetchProteinParticles, 2)FetchLipidParticles and 3)FetchFrame\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stl\&.h>\fP
+.PP
+Inherits \fBMemoryManager\fP\&.
+.PP
+Inherited by \fBDataManager\fP\fC [virtual]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTL\fP ()"
+.br
+.RI "\fI\fBSTL\fP class constructure\&. \fP"
+.ti -1c
+.RI "void \fBFetchProteinParticles\fP (unsigned int frameindex)"
+.br
+.RI "\fIFetchProteinParticles fetches proteins particles\&. \fP"
+.ti -1c
+.RI "void \fBFetchLipidParticles\fP (unsigned int frameindex)"
+.br
+.RI "\fIFetchLipidParticles fetches lipid particles\&. \fP"
+.ti -1c
+.RI "int \fBFetchFrame\fP (unsigned int frameindex)"
+.br
+.RI "\fIFetchFrame fetches frame\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBSTL\fP class interfaces the \fBSTL\fP method\&. The \fBSTL\fP class provides three main functions: 1)FetchProteinParticles, 2)FetchLipidParticles and 3)FetchFrame\&. 
+.PP
+Definition at line 10 of file stl\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int STL::FetchFrame (unsigned int frameindex)"
+
+.PP
+FetchFrame fetches frame\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index to be fetched 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+time elapced for reading the data 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file stl\&.cpp\&.
+.SS "void STL::FetchLipidParticles (unsigned int frameindex)"
+
+.PP
+FetchLipidParticles fetches lipid particles\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index to be fetched 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file stl\&.cpp\&.
+.SS "void STL::FetchProteinParticles (unsigned int frameindex)"
+
+.PP
+FetchProteinParticles fetches proteins particles\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index to be fetched 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file stl\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

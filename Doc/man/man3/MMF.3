@@ -1,0 +1,137 @@
+.TH "MMF" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MMF \- The \fBMMF\fP class interfaces the boost \fBMMF\fP functions\&. The \fBMMF\fP class provides a number of public functiond such as 1)GetVertexData, 2)FetchProteinParticles, 3)FetchLipidParticles, 4)FetchFrame, and 5)ReadFile\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mmf\&.h>\fP
+.PP
+Inherits \fBMemoryManager\fP\&.
+.PP
+Inherited by \fBDataManager\fP\fC [virtual]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMMF\fP ()"
+.br
+.RI "\fI\fBMMF\fP class constructure\&. \fP"
+.ti -1c
+.RI "bio::mapped_file_source & \fBGetVertexData\fP ()"
+.br
+.RI "\fIGetVertexData gets the vertex data\&. \fP"
+.ti -1c
+.RI "void \fBFetchProteinParticles\fP (unsigned int frameindex)"
+.br
+.RI "\fIFetchProteinParticles fetches protein particles\&. \fP"
+.ti -1c
+.RI "void \fBFetchLipidParticles\fP (unsigned int frameindex)"
+.br
+.RI "\fIFetchLipidParticles fetches partices number\&. \fP"
+.ti -1c
+.RI "int \fBFetchFrame\fP (unsigned int frameindex, void *&mapframe)"
+.br
+.RI "\fIFetchFrame fecthes frame data\&. \fP"
+.ti -1c
+.RI "void \fBReadFile\fP (bio::mapped_file_source &out, QString name, unsigned int frameindex, long typesize, long atomsnumber, long framesnumber=1)"
+.br
+.RI "\fIReadFile\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBMMF\fP class interfaces the boost \fBMMF\fP functions\&. The \fBMMF\fP class provides a number of public functiond such as 1)GetVertexData, 2)FetchProteinParticles, 3)FetchLipidParticles, 4)FetchFrame, and 5)ReadFile\&. 
+.PP
+Definition at line 14 of file mmf\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int MMF::FetchFrame (unsigned int frameindex, void *& mapframe)"
+
+.PP
+FetchFrame fecthes frame data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index to be fetched 
+.br
+\fImapframe\fP (we don't use this for now) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the time elapced for reading the frame data 
+.RE
+.PP
+
+.PP
+Definition at line 125 of file mmf\&.cpp\&.
+.SS "void MMF::FetchLipidParticles (unsigned int frameindex)"
+
+.PP
+FetchLipidParticles fetches partices number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index (time step) 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file mmf\&.cpp\&.
+.SS "void MMF::FetchProteinParticles (unsigned int frameindex)"
+
+.PP
+FetchProteinParticles fetches protein particles\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIframeindex\fP specifies the frame index (time step) 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file mmf\&.cpp\&.
+.SS "bio::mapped_file_source& MMF::GetVertexData ()\fC [inline]\fP"
+
+.PP
+GetVertexData gets the vertex data\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a reference to mapped_file_source object 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file mmf\&.h\&.
+.SS "void MMF::ReadFile (bio::mapped_file_source & out, QString name, unsigned int frameindex, long typesize, long atomsnumber, long framesnumber = \fC1\fP)"
+
+.PP
+ReadFile\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIout\fP 
+.br
+\fIname\fP 
+.br
+\fIframeindex\fP 
+.br
+\fItypesize\fP 
+.br
+\fIatomsnumber\fP 
+.br
+\fIframesnumber\fP 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file mmf\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

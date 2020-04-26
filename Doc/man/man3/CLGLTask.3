@@ -1,0 +1,68 @@
+.TH "CLGLTask" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLGLTask \- The \fBCLGLTask\fP class is responsible for shared tasks\&. The shared tasks are the tasks that utilize OpenCL-GL interoperability\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clgltask\&.h>\fP
+.PP
+Inherits \fBCLTask\fP\&.
+.PP
+Inherited by \fBCLManager\fP\fC [virtual]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLGLTask\fP ()"
+.br
+.RI "\fI\fBCLGLTask\fP class constructor\&. \fP"
+.ti -1c
+.RI "void \fBComputeProteinLipidInteraction\fP (GLuint vertexbufferid, GLuint colorbufferid, void *systemstructure, void *proteinspaces, void *proteinparticles, unsigned int atomsnumber, float interactiondistance, unsigned int workitemssize=0, unsigned int localsize=0)"
+.br
+.RI "\fIComputeProteinLipidInteraction this function utilize the shared context to perform the protein-lipid interaction test\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBCLGLTask\fP class is responsible for shared tasks\&. The shared tasks are the tasks that utilize OpenCL-GL interoperability\&. 
+.PP
+Definition at line 12 of file clgltask\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CLGLTask::ComputeProteinLipidInteraction (GLuint vertexbufferid, GLuint colorbufferid, void * systemstructure, void * proteinspaces, void * proteinparticles, unsigned int atomsnumber, float interactiondistance, unsigned int workitemssize = \fC0\fP, unsigned int localsize = \fC0\fP)"
+
+.PP
+ComputeProteinLipidInteraction this function utilize the shared context to perform the protein-lipid interaction test\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvertexbufferid\fP the id of a valid OpenGL vertext buffer 
+.br
+\fIcolorbufferid\fP the id of a valid OpenGL color buffer 
+.br
+\fIsystemstructure\fP a void pointer to SystemStructureRecord structure\&. This structure is used in the GPU\&. 
+.br
+\fIproteinspaces\fP a void pointer to ProteinSpace structure\&. This structure is used in the GPU\&. 
+.br
+\fIproteinparticles\fP a void pointer to ProteinParticle structure\&. This structure is used in the GPU\&. 
+.br
+\fIatomsnumber\fP number of atoms involved in the interaction test 
+.br
+\fIinteractiondistance\fP a float point number to specify the maximum distance of the interaction 
+.br
+\fIworkitemssize\fP specifying the number of work items to be excuteed in the GPU\&. Usually we use the atoms number\&. 
+.br
+\fIlocalsize\fP specify the number of items to be excuted within each group in the GPU\&. 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file clgltask\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

@@ -1,0 +1,72 @@
+.TH "XDRFILE" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XDRFILE \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "FILE * \fBfp\fP"
+.br
+.ti -1c
+.RI "\fBXDR\fP * \fBxdr\fP"
+.br
+.ti -1c
+.RI "char \fBmode\fP"
+.br
+.ti -1c
+.RI "int * \fBbuf1\fP"
+.br
+.ti -1c
+.RI "int \fBbuf1size\fP"
+.br
+.ti -1c
+.RI "int * \fBbuf2\fP"
+.br
+.ti -1c
+.RI "int \fBbuf2size\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contents of the abstract \fBXDRFILE\fP data structure\&. 
+.PP
+Definition at line 175 of file xdrfile\&.c\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int* XDRFILE::buf1"
+Buffer for internal use 
+.PP
+Definition at line 180 of file xdrfile\&.c\&.
+.SS "int XDRFILE::buf1size"
+Current allocated length of buf1 
+.PP
+Definition at line 181 of file xdrfile\&.c\&.
+.SS "int* XDRFILE::buf2"
+Buffer for internal use 
+.PP
+Definition at line 182 of file xdrfile\&.c\&.
+.SS "int XDRFILE::buf2size"
+Current allocated length of buf2 
+.PP
+Definition at line 183 of file xdrfile\&.c\&.
+.SS "FILE* XDRFILE::fp"
+pointer to standard C library file handle 
+.PP
+Definition at line 177 of file xdrfile\&.c\&.
+.SS "char XDRFILE::mode"
+r=read, w=write, a=append 
+.PP
+Definition at line 179 of file xdrfile\&.c\&.
+.SS "\fBXDR\fP* XDRFILE::xdr"
+pointer to corresponding \fBXDR\fP handle 
+.PP
+Definition at line 178 of file xdrfile\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

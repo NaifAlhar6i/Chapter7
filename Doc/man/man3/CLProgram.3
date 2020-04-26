@@ -1,0 +1,102 @@
+.TH "CLProgram" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLProgram \- The \fBCLProgram\fP class interfaces the OpenCL program \fBCLProgram\fP requires a valid pointer to the \fBCLContext\fP object The class provides three functions: 1)Create, 2)GetProgram, and 3)GetSharedProgram\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clprogram\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLProgram\fP (\fBCLContext\fP *clcontext)"
+.br
+.RI "\fI\fBCLProgram\fP class constructor\&. \fP"
+.ti -1c
+.RI "bool \fBCreate\fP (QString filename)"
+.br
+.RI "\fICreate creates an Open cl program\&. \fP"
+.ti -1c
+.RI "cl_program \fBGetProgram\fP ()"
+.br
+.RI "\fIGetProgram: getter for an OpenCL default program\&. \fP"
+.ti -1c
+.RI "cl_program \fBGetSharedProgram\fP ()"
+.br
+.RI "\fIGetSharedProgram getter for an OpenCL shared program\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLProgram\fP class interfaces the OpenCL program \fBCLProgram\fP requires a valid pointer to the \fBCLContext\fP object The class provides three functions: 1)Create, 2)GetProgram, and 3)GetSharedProgram\&. 
+.PP
+Definition at line 11 of file clprogram\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CLProgram::CLProgram (\fBCLContext\fP * clcontext)"
+
+.PP
+\fBCLProgram\fP class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclcontext\fP a valid pointer to \fBCLContext\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 4 of file clprogram\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool CLProgram::Create (QString filename)"
+
+.PP
+Create creates an Open cl program\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP the name of program file to be created 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 13 of file clprogram\&.cpp\&.
+.SS "cl_program CLProgram::GetProgram ()\fC [inline]\fP"
+
+.PP
+GetProgram: getter for an OpenCL default program\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+default opencl program 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file clprogram\&.h\&.
+.SS "cl_program CLProgram::GetSharedProgram ()\fC [inline]\fP"
+
+.PP
+GetSharedProgram getter for an OpenCL shared program\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+opencl shared program 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file clprogram\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

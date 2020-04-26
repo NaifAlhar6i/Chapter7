@@ -1,0 +1,126 @@
+.TH "GLManager" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GLManager \- The \fBGLManager\fP class manages the OpenGL state\&. The class provides a number of function to access the \fBParticle\fP object\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <glmanager\&.h>\fP
+.PP
+Inherited by \fBGLWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGLManager\fP ()"
+.br
+.RI "\fI\fBGLManager\fP class constructor\&. \fP"
+.ti -1c
+.RI "void \fBInitializeGLObjects\fP ()"
+.br
+.RI "\fIInitializeGLObjects initilizes the Open gl objects\&. \fP"
+.ti -1c
+.RI "void \fBFreeResources\fP ()"
+.br
+.RI "\fIFreeResources releases the assiocated object and clear the memory\&. \fP"
+.ti -1c
+.RI "int \fBUpdateParticles\fP (void *particle, void *color, bool map)"
+.br
+.RI "\fIUpdateParticles updates the opengl vertex and color buffer\&. \fP"
+.ti -1c
+.RI "int \fBUpdateParticles\fP (void *particle, bool map)"
+.br
+.RI "\fIUpdateParticles updates the opengl vertex buffer\&. \fP"
+.ti -1c
+.RI "void \fBRender\fP (QMatrix4x4 projection, QMatrix4x4 view, QMatrix4x4 model)"
+.br
+.RI "\fIRender renderes the current data-set\&. \fP"
+.ti -1c
+.RI "\fBParticle\fP * \fBGetParticle\fP ()"
+.br
+.RI "\fIGetParticle\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBGLManager\fP class manages the OpenGL state\&. The class provides a number of function to access the \fBParticle\fP object\&. 
+.PP
+Definition at line 12 of file glmanager\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBParticle\fP* GLManager::GetParticle ()\fC [inline]\fP"
+
+.PP
+GetParticle\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line 61 of file glmanager\&.h\&.
+.SS "void GLManager::Render (QMatrix4x4 projection, QMatrix4x4 view, QMatrix4x4 model)"
+
+.PP
+Render renderes the current data-set\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprojection\fP the projection matrex 
+.br
+\fIview\fP the view matrex 
+.br
+\fImodel\fP the model matrex 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file glmanager\&.cpp\&.
+.SS "int GLManager::UpdateParticles (void * particle, void * color, bool map)"
+
+.PP
+UpdateParticles updates the opengl vertex and color buffer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP a void pointer to the particle data 
+.br
+\fIcolor\fP a void pointer to the color data 
+.br
+\fImap\fP specify the option of filling the vertex buffer and the color buffer if true the glBuffeMap* functions will be used otherwise the glBufferData will be used to fill the buffer data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 18 of file glmanager\&.cpp\&.
+.SS "int GLManager::UpdateParticles (void * particle, bool map)"
+
+.PP
+UpdateParticles updates the opengl vertex buffer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP a void pointer to the particle data 
+.br
+\fImap\fP specify the option of filling the vertex buffer if true the glBuffeMap* functions will be used otherwise the glBufferData will be used to fill the buffer data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 28 of file glmanager\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

@@ -1,0 +1,105 @@
+.TH "CLKernel" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLKernel \- The \fBCLKernel\fP class interfaces the OpenCL kernel object\&. \fBCLKernel\fP requires a valid pointer to \fBCLProgram\fP\&. The class provides three main fnctions: 1)Create, 2) GetKernel, and 3) GetSharedKernel\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clkernel\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLKernel\fP (\fBCLProgram\fP *clprogram)"
+.br
+.RI "\fI\fBCLKernel\fP clas constructure\&. \fP"
+.ti -1c
+.RI "bool \fBCreate\fP (QString kernelname, QString sharedkernelname=NULL)"
+.br
+.RI "\fICreate creates two open cl kernels: 1) default kernel, and 2) shared kernel\&. \fP"
+.ti -1c
+.RI "cl_kernel \fBGetKernel\fP ()"
+.br
+.RI "\fIGetKernel: accessor for the defualt kernel\&. \fP"
+.ti -1c
+.RI "cl_kernel \fBGetSharedKernel\fP ()"
+.br
+.RI "\fIGetSharedKernel: accessor for shared kernel\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLKernel\fP class interfaces the OpenCL kernel object\&. \fBCLKernel\fP requires a valid pointer to \fBCLProgram\fP\&. The class provides three main fnctions: 1)Create, 2) GetKernel, and 3) GetSharedKernel\&. 
+.PP
+Definition at line 11 of file clkernel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CLKernel::CLKernel (\fBCLProgram\fP * clprogram)"
+
+.PP
+\fBCLKernel\fP clas constructure\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclprogram\fP a pointer to \fBCLProgram\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file clkernel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool CLKernel::Create (QString kernelname, QString sharedkernelname = \fCNULL\fP)"
+
+.PP
+Create creates two open cl kernels: 1) default kernel, and 2) shared kernel\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkernelname\fP the name of the default kernel to be created 
+.br
+\fIsharedkernelname\fP the name of the shared kernel to be created\&. By default there is no shared kernel\&. If the sharedkernelname parameter is NULL only a default kernel is created\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if required kernel(s) is created sucessully otherways it returns false 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file clkernel\&.cpp\&.
+.SS "cl_kernel CLKernel::GetKernel ()\fC [inline]\fP"
+
+.PP
+GetKernel: accessor for the defualt kernel\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+default cl_kernel object 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file clkernel\&.h\&.
+.SS "cl_kernel CLKernel::GetSharedKernel ()\fC [inline]\fP"
+
+.PP
+GetSharedKernel: accessor for shared kernel\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+shared cl_kernel object 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file clkernel\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

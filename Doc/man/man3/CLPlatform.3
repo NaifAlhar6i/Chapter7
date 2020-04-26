@@ -1,0 +1,100 @@
+.TH "CLPlatform" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLPlatform \- The \fBCLPlatform\fP class interfaces te OpenCL platform object The class provides four functions: 1)Setup, 2)GetID, 3)GetCLContextProperties, and 4)GetCLGLContextProperties\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clplatform\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLPlatform\fP ()"
+.br
+.RI "\fI\fBCLPlatform\fP class constructor\&. \fP"
+.ti -1c
+.RI "bool \fBSetup\fP ()"
+.br
+.RI "\fISetup configurs the platform settings:1) platform id, 2) default context properties, and shared context properties\&. \fP"
+.ti -1c
+.RI "cl_platform_id \fBGetID\fP ()"
+.br
+.RI "\fIGetID: getter for the platform id\&. \fP"
+.ti -1c
+.RI "QVector< cl_context_properties > \fBGetCLContextProperties\fP ()"
+.br
+.RI "\fIGetCLContextProperties accessor for a default cl_context_properties\&. \fP"
+.ti -1c
+.RI "QVector< cl_context_properties > \fBGetCLGLContextProperties\fP ()"
+.br
+.RI "\fIGetCLGLContextProperties accessor for shared cl_context_properties\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLPlatform\fP class interfaces te OpenCL platform object The class provides four functions: 1)Setup, 2)GetID, 3)GetCLContextProperties, and 4)GetCLGLContextProperties\&. 
+.PP
+Definition at line 11 of file clplatform\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QVector<cl_context_properties> CLPlatform::GetCLContextProperties ()\fC [inline]\fP"
+
+.PP
+GetCLContextProperties accessor for a default cl_context_properties\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+list of cl context propertie in a QVector 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file clplatform\&.h\&.
+.SS "QVector<cl_context_properties> CLPlatform::GetCLGLContextProperties ()\fC [inline]\fP"
+
+.PP
+GetCLGLContextProperties accessor for shared cl_context_properties\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+list of cl context propertie in a QVector 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file clplatform\&.h\&.
+.SS "cl_platform_id CLPlatform::GetID ()\fC [inline]\fP"
+
+.PP
+GetID: getter for the platform id\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+platform id object 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file clplatform\&.h\&.
+.SS "bool CLPlatform::Setup ()"
+
+.PP
+Setup configurs the platform settings:1) platform id, 2) default context properties, and shared context properties\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if platform is configured sucessully otherways it returns false 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file clplatform\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

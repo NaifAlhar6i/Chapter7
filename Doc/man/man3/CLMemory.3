@@ -1,0 +1,127 @@
+.TH "CLMemory" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CLMemory \- The \fBCLMemory\fP class interfaces the OpenCL memory object \fBCLMemory\fP requires a valid pointer to \fBCLContext\fP object\&. The class provides four main functions: 1) Create, 2)CreateShared, 3) GetMemoryObject, and 4) GetSharedMemoryObject\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clmemory\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCLMemory\fP (\fBCLContext\fP *clcontext)"
+.br
+.RI "\fI\fBCLMemory\fP class constructor\&. \fP"
+.ti -1c
+.RI "cl_mem \fBGetMemoryObject\fP ()"
+.br
+.RI "\fIGetMemoryObject: accessor for default OpenCL memory object\&. \fP"
+.ti -1c
+.RI "cl_mem \fBGetSharedMemoryObject\fP ()"
+.br
+.RI "\fIGetSharedMemoryObject: accessor for shared OpenCL memory object\&. \fP"
+.ti -1c
+.RI "bool \fBCreate\fP (size_t buffersize, bool usesharedcontext=false)"
+.br
+.RI "\fICreate creates a default OpenCL memory object\&. \fP"
+.ti -1c
+.RI "bool \fBCreateShared\fP (GLuint glbufferid)"
+.br
+.RI "\fICreateShared creates a shared OpenCL memory object\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCLMemory\fP class interfaces the OpenCL memory object \fBCLMemory\fP requires a valid pointer to \fBCLContext\fP object\&. The class provides four main functions: 1) Create, 2)CreateShared, 3) GetMemoryObject, and 4) GetSharedMemoryObject\&. 
+.PP
+Definition at line 11 of file clmemory\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CLMemory::CLMemory (\fBCLContext\fP * clcontext)"
+
+.PP
+\fBCLMemory\fP class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclcontext\fP a pointer to \fBCLContext\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file clmemory\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool CLMemory::Create (size_t buffersize, bool usesharedcontext = \fCfalse\fP)"
+
+.PP
+Create creates a default OpenCL memory object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffersize\fP specifies the required size 
+.br
+\fIusesharedcontext\fP specifies whether the OpenCL memory 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the default memory object is created sucessully otherways it returns false 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file clmemory\&.cpp\&.
+.SS "bool CLMemory::CreateShared (GLuint glbufferid)"
+
+.PP
+CreateShared creates a shared OpenCL memory object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIglbufferid\fP specifies the OpenGL buufer id 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the shared memory object is created sucessully otherways it returns false NOTE: This function creates an OpenCL memory object from an OpenGL buffer 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file clmemory\&.cpp\&.
+.SS "cl_mem CLMemory::GetMemoryObject ()\fC [inline]\fP"
+
+.PP
+GetMemoryObject: accessor for default OpenCL memory object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_mem 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file clmemory\&.h\&.
+.SS "cl_mem CLMemory::GetSharedMemoryObject ()\fC [inline]\fP"
+
+.PP
+GetSharedMemoryObject: accessor for shared OpenCL memory object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+cl_mem 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file clmemory\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

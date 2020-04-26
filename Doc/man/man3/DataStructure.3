@@ -1,0 +1,478 @@
+.TH "DataStructure" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DataStructure \- The \fBDataStructure\fP is reponsible for managing the data structure\&. It provides allocating functionalties to allocate memory space for the structures, and provides accessor function to access the allocated memory space\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <datastructure\&.h>\fP
+.PP
+Inherits \fBDebugger\fP\&.
+.PP
+Inherited by \fBMemoryManager\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataStructure\fP ()"
+.br
+.RI "\fI\fBDataStructure\fP class cunstructure\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static rvec * \fBgetVertexPosition\fP ()"
+.br
+.RI "\fIgetVertexPosition gets vertex position \fP"
+.ti -1c
+.RI "static \fBVertexColor\fP * \fBgetVertexColor\fP ()"
+.br
+.RI "\fIgetVertexColor gets vertex color \fP"
+.ti -1c
+.RI "static rvec * \fBgetFirstFrame\fP ()"
+.br
+.RI "\fIgetFirstFrame gets the first frame \fP"
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSystemInformationRecord\fP * \fBgetSystemInformation\fP ()"
+.br
+.RI "\fIgetSystemInformation gets the system information \fP"
+.ti -1c
+.RI "static \fBSystemStructureRecord\fP * \fBgetSystemStructure\fP ()"
+.br
+.RI "\fIgetSystemStructure gets the system structure \fP"
+.ti -1c
+.RI "static \fBCOMStructureRecord\fP * \fBgetCOMStructure\fP ()"
+.br
+.RI "\fIgetCOMStructure gets the center of mass structure \fP"
+.ti -1c
+.RI "static \fBGPUProteinSpace\fP * \fBgetProteinSpace\fP ()"
+.br
+.RI "\fIgetProteinSpace gets the protein spapce \fP"
+.ti -1c
+.RI "static \fBGPULipidSpace\fP * \fBgetLipidSpace\fP ()"
+.br
+.RI "\fIgetLipidSpace gets the lipid space \fP"
+.ti -1c
+.RI "static \fBGPUProteinParticle\fP * \fBgetProteinParticles\fP ()"
+.br
+.RI "\fIgetProteinParticles gets protein particles \fP"
+.ti -1c
+.RI "static \fBGPULipidParticle\fP * \fBgetLipidParticles\fP ()"
+.br
+.RI "\fIgetLipidParticles gets the lipid particle \fP"
+.ti -1c
+.RI "static QMap< unsigned short, QString > & \fBgetProteinResidueIdentifierTable\fP ()"
+.br
+.RI "\fIgetProteinResidueIdentifierTable gets the protein residue identifier table \fP"
+.ti -1c
+.RI "static QMap< unsigned short, QString > & \fBgetLipidPOPEResidueIdentifierTable\fP ()"
+.br
+.RI "\fIgetLipidPOPEResidueIdentifierTable gets the POPE lipid type residue identifier table \fP"
+.ti -1c
+.RI "static QMap< unsigned short, QString > & \fBgetLipidPOPGResidueIdentifierTable\fP ()"
+.br
+.RI "\fIgetLipidPOPGResidueIdentifierTable gets the POPG lipid type residue identifier table \fP"
+.ti -1c
+.RI "static bool \fBallocateSystemInformationSpace\fP ()"
+.br
+.RI "\fIallocateSystemInformationSpace allocates the system information space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateSystemStructureSpace\fP (long time)"
+.br
+.RI "\fIallocateSystemStructureSpace allocates the system structure space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateCOMStructureSpace\fP (long time)"
+.br
+.RI "\fIallocateCOMStructureSpace allocates a space in the heap for the structure of the center of mass sysytem \fP"
+.ti -1c
+.RI "static bool \fBallocateProteinSpace\fP (long time)"
+.br
+.RI "\fIallocateProteinSpace allocates the protein space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateProteinParticles\fP (long time)"
+.br
+.RI "\fIallocateProteinParticles allocates the protein particles space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateLipidSpace\fP (long time)"
+.br
+.RI "\fIallocateLipidSpace allocates the lipid space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateLipidParticles\fP (long time)"
+.br
+.RI "\fIallocateLipidParticles allocates the lipid particles space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateVertexPosition\fP (long time)"
+.br
+.RI "\fIallocateVertexPosition allocates the vertices possition space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateVertexColor\fP (long time)"
+.br
+.RI "\fIallocateVertexColor allocates the vertices color space in the heap \fP"
+.ti -1c
+.RI "static bool \fBallocateFirstFrame\fP (long time)"
+.br
+.RI "\fIallocateFirstFrame allocates the first frame space in the heap \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBDataStructure\fP is reponsible for managing the data structure\&. It provides allocating functionalties to allocate memory space for the structures, and provides accessor function to access the allocated memory space\&. 
+.PP
+Definition at line 11 of file datastructure\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool DataStructure::allocateCOMStructureSpace (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateCOMStructureSpace allocates a space in the heap for the structure of the center of mass sysytem 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateFirstFrame (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateFirstFrame allocates the first frame space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 361 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateLipidParticles (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateLipidParticles allocates the lipid particles space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 253 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateLipidSpace (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateLipidSpace allocates the lipid space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 218 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateProteinParticles (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateProteinParticles allocates the protein particles space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 182 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateProteinSpace (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateProteinSpace allocates the protein space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 143 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateSystemInformationSpace ()\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateSystemInformationSpace allocates the system information space in the heap 
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateSystemStructureSpace (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateSystemStructureSpace allocates the system structure space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateVertexColor (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateVertexColor allocates the vertices color space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 325 of file datastructure\&.cpp\&.
+.SS "bool DataStructure::allocateVertexPosition (long time)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+allocateVertexPosition allocates the vertices possition space in the heap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime\fP specifies the number of records (is used to determin the size of the memory needed) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the space is allocated otherwise return false 
+.RE
+.PP
+
+.PP
+Definition at line 289 of file datastructure\&.cpp\&.
+.SS "static \fBCOMStructureRecord\fP* DataStructure::getCOMStructure ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getCOMStructure gets the center of mass structure 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the center of mass structure 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file datastructure\&.h\&.
+.SS "static rvec* DataStructure::getFirstFrame ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+getFirstFrame gets the first frame 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the first frame 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file datastructure\&.h\&.
+.SS "static \fBGPULipidParticle\fP* DataStructure::getLipidParticles ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getLipidParticles gets the lipid particle 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the lipid particles 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file datastructure\&.h\&.
+.SS "static QMap<unsigned short, QString>& DataStructure::getLipidPOPEResidueIdentifierTable ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getLipidPOPEResidueIdentifierTable gets the POPE lipid type residue identifier table 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the lipid POPE type identifier table 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file datastructure\&.h\&.
+.SS "static QMap<unsigned short, QString>& DataStructure::getLipidPOPGResidueIdentifierTable ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getLipidPOPGResidueIdentifierTable gets the POPG lipid type residue identifier table 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the lipid POPG type identifier table 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file datastructure\&.h\&.
+.SS "static \fBGPULipidSpace\fP* DataStructure::getLipidSpace ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getLipidSpace gets the lipid space 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the lipid space 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file datastructure\&.h\&.
+.SS "static \fBGPUProteinParticle\fP* DataStructure::getProteinParticles ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getProteinParticles gets protein particles 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the protein particles 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file datastructure\&.h\&.
+.SS "static QMap<unsigned short, QString>& DataStructure::getProteinResidueIdentifierTable ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getProteinResidueIdentifierTable gets the protein residue identifier table 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the protein residue identifier table 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file datastructure\&.h\&.
+.SS "static \fBGPUProteinSpace\fP* DataStructure::getProteinSpace ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getProteinSpace gets the protein spapce 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the protein space 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file datastructure\&.h\&.
+.SS "static \fBSystemInformationRecord\fP* DataStructure::getSystemInformation ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getSystemInformation gets the system information 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the system information data 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file datastructure\&.h\&.
+.SS "static \fBSystemStructureRecord\fP* DataStructure::getSystemStructure ()\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+getSystemStructure gets the system structure 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the system structure 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file datastructure\&.h\&.
+.SS "static \fBVertexColor\fP* DataStructure::getVertexColor ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+getVertexColor gets vertex color 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line 30 of file datastructure\&.h\&.
+.SS "static rvec* DataStructure::getVertexPosition ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+getVertexPosition gets vertex position 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the vertex position 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file datastructure\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

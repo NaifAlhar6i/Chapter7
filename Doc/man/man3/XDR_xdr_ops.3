@@ -1,0 +1,40 @@
+.TH "XDR::xdr_ops" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XDR::xdr_ops \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int(* \fBx_getlong\fP )(\fBXDR\fP *__xdrs, int32_t *__lp)"
+.br
+.ti -1c
+.RI "int(* \fBx_putlong\fP )(\fBXDR\fP *__xdrs, int32_t *__lp)"
+.br
+.ti -1c
+.RI "int(* \fBx_getbytes\fP )(\fBXDR\fP *__xdrs, char *__addr, unsigned int __len)"
+.br
+.ti -1c
+.RI "int(* \fBx_putbytes\fP )(\fBXDR\fP *__xdrs, char *__addr, unsigned int __len)"
+.br
+.ti -1c
+.RI "unsigned int(* \fBx_getpostn\fP )(\fBXDR\fP *__xdrs)"
+.br
+.ti -1c
+.RI "int(* \fBx_setpostn\fP )(\fBXDR\fP *__xdrs, unsigned int __pos)"
+.br
+.ti -1c
+.RI "void(* \fBx_destroy\fP )(\fBXDR\fP *__xdrs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 126 of file xdrfile\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

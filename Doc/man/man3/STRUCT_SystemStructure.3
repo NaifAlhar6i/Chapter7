@@ -1,0 +1,92 @@
+.TH "STRUCT_SystemStructure" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+STRUCT_SystemStructure \- SystemStructureRecord contains the structure of the system based on the GRO file content\&. We manage this system structure through the \fBDataStructure\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <structure\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTRUCT_SystemStructure\fP \fBlookup\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "\fBSTRUCT_SystemStructure\fP * \fBlookupRef\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "unsigned int \fBgetAtomIndex\fP ()"
+.br
+.ti -1c
+.RI "unsigned short \fBgetMoleculeType\fP ()"
+.br
+.ti -1c
+.RI "unsigned short \fBgetMoleculeIndex\fP ()"
+.br
+.ti -1c
+.RI "unsigned short \fBgetMoleculeResidueIndex\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetAtomIndex\fP (unsigned int index)"
+.br
+.ti -1c
+.RI "void \fBsetMoleculeType\fP (unsigned short type)"
+.br
+.ti -1c
+.RI "void \fBsetMoleculeIndex\fP (unsigned short index)"
+.br
+.ti -1c
+.RI "void \fBsetMoleculeResidueIndex\fP (unsigned short index)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_AtomIndex\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBm_MoleculeType\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBm_MoleculeIndex\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBm_MoleculeResidueIndex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+SystemStructureRecord contains the structure of the system based on the GRO file content\&. We manage this system structure through the \fBDataStructure\fP class\&. 
+
+the SystemStructureRecord has four members: 1)atim index, 2)molecule type, 3)molecule index, and 4)molecule resideu index The values of these memeberes are extracted from the GRO file\&. 
+.PP
+Definition at line 36 of file structure\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSTRUCT_SystemStructure\fP STRUCT_SystemStructure::lookup (unsigned int index)\fC [inline]\fP"
+m_MoleculeResidueIndex containes the residue index inside the molecule 
+.PP
+Definition at line 43 of file structure\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned short STRUCT_SystemStructure::m_MoleculeIndex"
+m_MoleculeType containes the molecule type: PROTEIN_MOLECULE_0, LIPID_MOLECULE_POPE, LIPID_MOLECULE_POPG 
+.PP
+Definition at line 40 of file structure\&.h\&.
+.SS "unsigned short STRUCT_SystemStructure::m_MoleculeResidueIndex"
+m_MoleculeIndex containes the molecule index 
+.PP
+Definition at line 41 of file structure\&.h\&.
+.SS "unsigned short STRUCT_SystemStructure::m_MoleculeType"
+m_AtomIndex containes the atom index\&. The index start with zero 
+.PP
+Definition at line 39 of file structure\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

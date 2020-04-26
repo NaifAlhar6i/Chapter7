@@ -1,0 +1,67 @@
+.TH "STRUCT_SystemInformation" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+STRUCT_SystemInformation \- SystemInformationRecord contains the system basic information\&. We manage this structure through the \fBDataStructure\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <structure\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBgetAtomsNumber\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetFramesNumber\fP ()"
+.br
+.ti -1c
+.RI "QVector3D \fBgetDimentions\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetAtomsNumber\fP (unsigned int atomsnumber)"
+.br
+.ti -1c
+.RI "void \fBsetFramesNumber\fP (unsigned int framesnumber)"
+.br
+.ti -1c
+.RI "void \fBsetDimentions\fP (QVector3D dimentions)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_AtomsNumber\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBm_FramesNumber\fP"
+.br
+.ti -1c
+.RI "QVector3D \fBm_Dimentions\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+SystemInformationRecord contains the system basic information\&. We manage this structure through the \fBDataStructure\fP class\&. 
+
+the SystemInformationRecord structure has three members: 1)atoms number, 2)frames number, and 3)dimentions The values of these memeberes are extracted from the GRO file\&. 
+.PP
+Definition at line 14 of file structure\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QVector3D STRUCT_SystemInformation::m_Dimentions"
+m_FramesNumber contains the total time steps (frames number) m_Dimentions contains the values of the the system dimentions\&. The values obtained from the GRO file 
+.PP
+Definition at line 18 of file structure\&.h\&.
+.SS "unsigned int STRUCT_SystemInformation::m_FramesNumber"
+m_AtomsNumber contains the total number of the system atoms (proteins atoms and lipid atoms)\&. 
+.PP
+Definition at line 17 of file structure\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.

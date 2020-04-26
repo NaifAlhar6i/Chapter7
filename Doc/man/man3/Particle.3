@@ -1,0 +1,169 @@
+.TH "Particle" 3 "Wed Jun 21 2017" "RealTimeMDSRendering" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Particle \- The \fBParticle\fP class is reponsiple for updating the particles vertex and color data and rendering the data-set The class requires a valid pointer to the current sphere vertex array object and sphere shader program\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <particle\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParticle\fP (\fBSphereVAO\fP *vao, \fBSphereShader\fP *shader)"
+.br
+.RI "\fI\fBParticle\fP class constructure\&. \fP"
+.ti -1c
+.RI "void \fBRender\fP (QMatrix4x4 projection, QMatrix4x4 view, QMatrix4x4 model)"
+.br
+.RI "\fIRender render the particles object\&. \fP"
+.ti -1c
+.RI "int \fBUpdate\fP (void *particle, void *color, bool map=false)"
+.br
+.RI "\fIUpdate updates the particle vertex buffer\&. \fP"
+.ti -1c
+.RI "int \fBUpdate\fP (void *particle, bool map=false)"
+.br
+.RI "\fIUpdate updates the particle vertex buffer\&. \fP"
+.ti -1c
+.RI "GLuint \fBGetVertexBufferID\fP ()"
+.br
+.RI "\fIGetVertexBufferID accessor for the vertex buffer id\&. \fP"
+.ti -1c
+.RI "GLuint \fBGetColorBufferID\fP ()"
+.br
+.RI "\fIGetColorBufferID accessor for the color buffer id\&. \fP"
+.ti -1c
+.RI "QOpenGLBuffer * \fBGetVertexBuffer\fP ()"
+.br
+.RI "\fIGetVertexBuffer accessor for the vertex buffer object\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBParticle\fP class is reponsiple for updating the particles vertex and color data and rendering the data-set The class requires a valid pointer to the current sphere vertex array object and sphere shader program\&. 
+.PP
+Definition at line 11 of file particle\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Particle::Particle (\fBSphereVAO\fP * vao, \fBSphereShader\fP * shader)"
+
+.PP
+\fBParticle\fP class constructure\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvao\fP a pointer to vertex array object 
+.br
+\fIshader\fP a pointer to particle shader 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file particle\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "GLuint Particle::GetColorBufferID ()\fC [inline]\fP"
+
+.PP
+GetColorBufferID accessor for the color buffer id\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+the color buffer ID 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file particle\&.h\&.
+.SS "QOpenGLBuffer* Particle::GetVertexBuffer ()\fC [inline]\fP"
+
+.PP
+GetVertexBuffer accessor for the vertex buffer object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the vertex buffer object 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file particle\&.h\&.
+.SS "GLuint Particle::GetVertexBufferID ()\fC [inline]\fP"
+
+.PP
+GetVertexBufferID accessor for the vertex buffer id\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+the vertex buffer ID 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file particle\&.h\&.
+.SS "void Particle::Render (QMatrix4x4 projection, QMatrix4x4 view, QMatrix4x4 model)"
+
+.PP
+Render render the particles object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprojection\fP the projection matrex 
+.br
+\fIview\fP the view matrex 
+.br
+\fImodel\fP the model matrex 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file particle\&.cpp\&.
+.SS "int Particle::Update (void * particle, void * color, bool map = \fCfalse\fP)"
+
+.PP
+Update updates the particle vertex buffer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP a void pointer to the particle data 
+.br
+\fIcolor\fP a void pointer to the vertx color data 
+.br
+\fImap\fP specify the option of filling the vertex buffer and the color buffer if true the glBuffeMap* functions will be used otherwise the glBufferData will be used to fill the buffer data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the buffer is filled sucessully otherwise returns false\&. 
+.RE
+.PP
+
+.PP
+Definition at line 34 of file particle\&.cpp\&.
+.SS "int Particle::Update (void * particle, bool map = \fCfalse\fP)"
+
+.PP
+Update updates the particle vertex buffer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparticle\fP a void pointer to the particle data 
+.br
+\fImap\fP specify the option of filling the vertex buffer if true the glBuffeMap* functions will be used otherwise the glBufferData will be used to fill the buffer data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the buffer is filled sucessully otherwise returns false\&. 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file particle\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RealTimeMDSRendering from the source code\&.
